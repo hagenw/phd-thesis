@@ -1,0 +1,29 @@
+# average over all loudspeaker arrays and positions
+# std/deg ci/deg
+4.77   0.58
+
+
+# 14 loudspeakers, average over positions
+# std/deg ci/deg
+4.89   0.68
+
+# 28 loudspeakers, average over positions
+# std/deg ci/deg
+4.58   0.61
+
+# 56 loudspeakers, average over positions
+# std/deg ci/deg
+4.85   0.77
+
+
+# Y = 0.75m, average over loudspeaker arrays
+# std/deg ci/deg
+4.13   0.88
+
+# Y = 0.00m, average over loudspeaker arrays
+# std/deg ci/deg
+5.96   0.70
+
+# Y = -0.75m, average over loudspeaker arrays
+# std/deg ci/deg
+3.99   0.76

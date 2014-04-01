@@ -1,0 +1,15 @@
+# Attribut                  D#1     D#2
+"narrow"                    -0.917  0.736
+"soft"                      0.730   1.004
+"close"                     -0.964  -0.639
+"strong low frequencies"    -0.882  -0.798
+"loud"                      -0.964  -0.639
+"weak high frequency attac" -1.087  -0.157
+"center"                    -0.075  -1.344
+"full"                      -0.904  -0.760
+"natural attac"             -1.067  0.301
+"few artifacts"             -0.983  0.592
+"chirping attac"            0.952   -0.665
+"colored"                   1.094   -0.042
+"non-falsified attac"       -0.952  0.665
+"narrow panorama"           -0.743  0.990

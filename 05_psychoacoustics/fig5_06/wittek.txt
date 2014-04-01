@@ -1,0 +1,14 @@
+# Type  Number  Coloration[0..4]  Confidence_interval
+# Note that the coloration was always the system inherent one. So the reference
+# condition was reproduced by the system under investigation and the other
+# stimuli were sources coming from another direction
+"Real"          1   0.81    0.17
+
+
+"Stereo"        2   0.70    0.16
+
+
+"WFS 3\,cm"     3   0.95    0.16
+"WFS 12\,cm"    4   2.1     0.22
+"WFS 24\,cm"    5   1.98    0.24
+"WFS 48\,cm"    6   2.35    0.24
