@@ -55,7 +55,7 @@ $ git checkout 3f9af4a
 After installing both toolboxes you have to start them first in Matlab/Octave in
 oder to run the scripts provided with this PhD thesis.
 This can be done by running the following commands from the `sfs/` and
-`amtoolbox` directory, respectively.
+`amtoolbox/` directory, respectively.
 ```Matlab
 >> cd sfs
 >> SFS_start;
