@@ -22,17 +22,11 @@ corresponding directory is indicating those cases.
 From the [Sound Field Synthesis Toolbox](https://github.com/sfstoolbox/sfs) git
 repository you need to checkout the version *commit 3730bc0*, which is identical
 with release 1.0.0. Under Linux this can be done the following way:
-```Bash
+```
 $ git clone https://github.com/sfstoolbox/sfs.git
 $ cd sfs
 $ git checkout 3730bc0
 ```
-
-After that you have to start the toolbox under Matlab/Octave by
-```Matlab
->> SFS_start
-```
-which can be found in the main `sfs` dir.
 
 
 ### Auditory Modelling Toolbox
@@ -40,7 +34,7 @@ which can be found in the main `sfs` dir.
 From the [Auditory Modelling Toolbox](http://amtoolbox.sourceforge.net/) git
 repository you need to checkout the version *commit aed0198*. Under Linux this
 can be done the following way:
-```Bash
+```
 $ git clone https://github.com/hagenw/amtoolbox.git
 $ cd amtoolbox
 $ git checkout aed0198
@@ -50,7 +44,7 @@ The [Auditory Modelling Toolbox](http://amtoolbox.sourceforge.net/) depends
 further on the [Large Time-Frequency Analysis
 Toolbox](https://github.com/hagenw/ltfat.git), which you can get in the same
 way:
-```Bash
+```
 $ git clone https://github.com/hagenw/ltfat.git
 $ cd ltfat
 $ git checkout 3f9af4a
