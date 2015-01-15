@@ -5,6 +5,7 @@
 # AUTHOR: Hagen Wierstorf
 
 reset
+set loadpath '../../gnuplot'
 
 # wxt
 set terminal epslatex size 15cm,8cm color colortext
@@ -40,7 +41,7 @@ set lmargin 2
 set rmargin 3
 set origin 0,0
 set arrow 1 from 35,1.2 to 50,2 ls 101 lw 3
-set label 1 '\href{}{\color{link}\ft listen}' at 2,0.75 left front
+set label 1 '\href{\GITHUB/fig5_12/wfs_point_source.wav}{\color{link}\ft listen}' at 2,0.75 left front
 set label 2 '\ft WFS point source' at 65,0.75 center front
 load 'xyborder.cfg'
 unset logscale x
@@ -55,7 +56,7 @@ set lmargin 3
 set rmargin 2
 set origin 0.5,0
 set arrow 1 from 55,1.2 to 40,2 ls 101 lw 3
-set label 1 '\href{}{\color{link}\ft listen}' at 88,0.75 right front 
+set label 1 '\href{\GITHUB/fig5_12/wfs_point_source_time_reversed.wav}{\color{link}\ft listen}' at 88,0.75 right front 
 set label 2 '\ft WFS point source' at 25,0.88 center front
 set label 3 '\ft time reversed' at 25,0.62 center front
 load 'xborder.cfg'
