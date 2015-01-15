@@ -30,9 +30,9 @@ set lmargin 4
 set rmargin 0
 set label 1 '\ft continuous secondary sources' at 569,5 center tc ls 101
 set label 2 '\ft \ac{NFC-HOA}' at 250,-3.5 left front tc ls 101
-set label 3 '\tiny numerical unstable' at 569,2.6 center front tc ls 1
-set label 4 '\tiny numerical unstable' at 569,0.1 center front tc ls 2
-set label 5 '\tiny numerical unstable' at 569,-2.4 center front tc ls 3
+set label 3 '\tiny numerically unstable' at 569,2.6 center front tc ls 1
+set label 4 '\tiny numerically unstable' at 569,0.1 center front tc ls 2
+set label 5 '\tiny numerically unstable' at 569,-2.4 center front tc ls 3
 plot 1/0
 #plot 'nfchoa_X0.00_Y0.00.txt' u ($1):($2*1000+2) w l ls 1 lw 3, \
 #     'nfchoa_X0.50_Y0.00.txt' u ($1):($2*1000) w l ls 2 lw 3, \

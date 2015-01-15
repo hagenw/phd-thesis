@@ -31,6 +31,7 @@ set tmargin 0
 
 
 set multiplot layout 2,3
+set label 11 '\ft continuous secondary sources' at 0,2.3 center front tc ls 101
 set label 1 '\ft \ac{NFC-HOA}' at -1.7,1.95 left front tc ls 101
 load 'yborder.cfg'
 set ylabel '$y$ / m' offset 1.5,0
@@ -41,6 +42,7 @@ plot 'nfchoa.dat' binary matrix u 1:2:(55*real($3)) with image,\
 load 'noborder.cfg'
 set lmargin 2
 set rmargin 2
+set label 11 '\ft 64 secondary sources'
 plot 'nfchoa_nls64.dat' binary matrix u 1:2:(27*real($3)) with image,\
      'array_nls64.txt' @array_active w p
 load 'xborder.cfg'
@@ -55,6 +57,7 @@ set ylabel '$y$ / m' offset 1.5,0
 set lmargin 4
 set rmargin 0
 set label 1 '\ft \ac{WFS}'
+unset label 11
 plot 'wfs.dat' binary matrix u 1:2:(real(-$3)) with image,\
      'array.txt' @array_inactive w l,\
      'array_wfs.txt' @array_active w l

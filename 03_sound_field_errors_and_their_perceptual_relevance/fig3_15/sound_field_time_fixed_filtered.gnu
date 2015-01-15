@@ -34,8 +34,8 @@ unset ylabel
 set lmargin 2
 set rmargin 2
 set label 1 '\ft 64 secondary sources'
-set label 3 '\tiny numerical unstable' at 7.50,-1.93 front tc ls 2
-set label 4 '\tiny numerical unst.' at 8.22,-3.93 front tc ls 3
+set label 3 '\tiny numerically unstable' at 7.50,-1.93 front tc ls 2
+set label 4 '\tiny numerically unst.' at 8.22,-3.93 front tc ls 3
 limit1(x,y) = x*1000.>7.25 ? 1/0 : y # this hides the numerical unstable parts
 limit2(x,y) = x*1000.>7.97 ? 1/0 : y
 stats 'lowpass_nfchoa_X0.00_Y0.00_nls64.txt' u 2 nooutput
