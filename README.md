@@ -59,6 +59,8 @@ This can be done by running the following commands from the `sfs/` and
 ```Matlab
 >> cd sfs
 >> SFS_start;
+>> cd ../ltfat
+>> ltfatstart;
 >> cd ../amtoolbox
 >> amtstart;
 ```
