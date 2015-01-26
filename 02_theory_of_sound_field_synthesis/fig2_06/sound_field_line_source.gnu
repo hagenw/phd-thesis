@@ -3,6 +3,7 @@
 set t epslatex size 5cm,5cm color colortext
 set output 'sound_field_line_source.tex';
 
+set loadpath '../../gnuplot'
 load 'border.cfg'
 load 'moreland.pal'
 
