@@ -7,10 +7,12 @@ f = 1 kHz.
 
 ## Steps for reproduction
 
+Matlab/Octave:
 ```Matlab
 >> sound_field_nfchoa_ps
 ```
 
+Bash:
 ```Bash
 $ gnuplot sound_field_nfchoa_ps.gnu
 ```

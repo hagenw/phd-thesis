@@ -7,10 +7,12 @@ by 2.5D WFS (2.67). Parameters: x_s =
 
 ## Steps for reproduction
 
+Matlab/Octave:
 ```Matlab
 >> sound_field_wfs_ls
 ```
 
+Bash:
 ```Bash
 $ gnuplot sound_field_wfs_ls.gnu
 ```

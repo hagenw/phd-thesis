@@ -7,10 +7,12 @@ Parameters: n_k = (0,−1,0), x_ref =
 
 ## Steps for reproduction
 
+Matlab/Octave:
 ```Matlab
 >> sound_field_nfchoa_pw
 ```
 
+Bash:
 ```Bash
 $ gnuplot sound_field_nfchoa_pw.gnu
 ```

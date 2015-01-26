@@ -7,10 +7,12 @@ f = 800 Hz.
 
 ## Steps for reproduction
 
+Matlab/Octave:
 ```Matlab
 >> sound_field_line_source
 ```
 
+Bash:
 ```Bash
 $ gnuplot sound_field_line_source.gnu
 ```

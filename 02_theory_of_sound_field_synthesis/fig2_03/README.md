@@ -15,10 +15,12 @@ The final figure is arranged in the svg file. In order to simulate the sound
 pressure for different geometries you can run the following two commands and
 compare it with the svg file.
 
+Matlab/Octave:
 ```Matlab
 >> sound_field_dimensionality
 ```
 
+Bash:
 ```Bash
 $ gnuplot sound_field_dimensionality.gnu
 ```

@@ -7,10 +7,12 @@ f = 800 Hz.
 
 ## Steps for reproduction
 
+Matlab/Octave:
 ```Matlab
 >> sound_field_plane_wave
 ```
 
+Bash:
 ```Bash
 $ gnuplot sound_field_plane_wave.gnu
 ```

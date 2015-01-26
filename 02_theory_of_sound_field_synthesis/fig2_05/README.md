@@ -7,10 +7,12 @@ placed at (0,0,0). Parameters: f =
 
 ## Steps for reproduction
 
+Matlab/Octave:
 ```Matlab
 >> sound_field_point_source
 ```
 
+Bash:
 ```Bash
 $ gnuplot sound_field_point_source.gnu
 ```

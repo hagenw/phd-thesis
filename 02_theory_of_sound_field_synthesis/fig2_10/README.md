@@ -7,10 +7,12 @@ Parameters: x_s = (0,2.5,0) m, x_ref = (0,0,0), f =
 
 ## Steps for reproduction
 
+Matlab/Octave:
 ```Matlab
 >> sound_field_wfs_ps
 ```
 
+Bash:
 ```Bash
 $ gnuplot sound_field_wfs_ps.gnu
 ```
