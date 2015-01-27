@@ -37,13 +37,13 @@ load 'yborder.cfg'
 set ylabel '$y$ / m' offset 1.5,0
 set lmargin 4
 set rmargin 0
-plot 'nfchoa.dat' binary matrix u 1:2:(55*real($3)) with image,\
+plot 'nfchoa.dat' binary matrix u 1:2:(8*real($3)) with image,\
      'array.txt' @array_active w l
 load 'noborder.cfg'
 set lmargin 2
 set rmargin 2
 set label 11 '\ft 64 secondary sources'
-plot 'nfchoa_nls64.dat' binary matrix u 1:2:(27*real($3)) with image,\
+plot 'nfchoa_nls64.dat' binary matrix u 1:2:(8*real($3)) with image,\
      'array_nls64.txt' @array_active w p
 load 'xborder.cfg'
 set xlabel '$x$ / m' offset 0,1
