@@ -1,4 +1,7 @@
 #!/usr/bin/gnuplot
+reset
+set loadpath '../../gnuplot'
+
 set t epslatex size 10cm,7cm color colortext
 set output 'amplitudes_moving_source.tex';
 
