@@ -46,7 +46,7 @@ conf.secondary_sources.x0 = [];
 
 %% ===== Main ============================================================
 hrtf = read_irs('QU_KEMAR_anechoic_3m.mat',conf);
-lookup_table = load('lookup.mat');
+load('lookup.mat');
 noise_sig = noise(44100,1,'pink');
 
 % ----- without aliasing -------------------------------------------------
@@ -63,7 +63,7 @@ conf.secondary_sources.number = 2000;
 conf.wfs.hprefhigh = 20000;
 for ii=1:length(X)
     ir = ir_wfs([X(ii) Y(ii) Z],phi,xs,src,hrtf,conf);
-    [~,~,itd,~,fc] = estimate_azimuth(auralize_ir(ir,noise_sig,1,conf),lookup_table,'include_outlier');
+    [~,~,itd,~,fc] = wierstorf2013estimateazimuth(auralize_ir(ir,noise_sig,1,conf),lookup_table,'include_outlier');
     gp_save(sprintf('wfs_X%1.2f_Y%1.2f.txt',X(ii),Y(ii)),[fc' itd']);
 end
 
@@ -73,21 +73,21 @@ conf.secondary_sources.number = 22;
 conf.nfchoa.order = 220;
 for ii=1:length(X)
     ir = ir_nfchoa([X(ii) Y(ii) Z],phi,xs,src,hrtf,conf);
-    [~,~,itd,~,fc] = estimate_azimuth(auralize_ir(ir,noise_sig,1,conf),lookup_table,'include_outlier');
+    [~,~,itd,~,fc] = wierstorf2013estimateazimuth(auralize_ir(ir,noise_sig,1,conf),lookup_table,'include_outlier');
     gp_save(sprintf('nfchoa_X%1.2f_Y%1.2f_nls22.txt',X(ii),Y(ii)),[fc' itd']);
 end
 % --- band limited NFCHOA
 conf.nfchoa.order = [];
 for ii=1:length(X)
     ir = ir_nfchoa([X(ii) Y(ii) Z],phi,xs,src,hrtf,conf);
-    [~,~,itd,~,fc] = estimate_azimuth(auralize_ir(ir,noise_sig,1,conf),lookup_table,'include_outlier');
+    [~,~,itd,~,fc] = wierstorf2013estimateazimuth(auralize_ir(ir,noise_sig,1,conf),lookup_table,'include_outlier');
     gp_save(sprintf('nfchoa_X%1.2f_Y%1.2f_nls22_band_limited.txt',X(ii),Y(ii)),[fc' itd']);
 end 
 % --- WFS
 conf.wfs.hprefhigh = 1500;
 for ii=1:length(X)
     ir = ir_wfs([X(ii) Y(ii) Z],phi,xs,src,hrtf,conf);
-    [~,~,itd,~,fc] = estimate_azimuth(auralize_ir(ir,noise_sig,1,conf),lookup_table,'include_outlier');
+    [~,~,itd,~,fc] = wierstorf2013estimateazimuth(auralize_ir(ir,noise_sig,1,conf),lookup_table,'include_outlier');
     gp_save(sprintf('wfs_X%1.2f_Y%1.2f_nls22.txt',X(ii),Y(ii)),[fc' itd']);
 end
 
