@@ -55,17 +55,17 @@ conf.bandpassfhigh = 2000;
 %% ===== Continuous secondary sources =====================================
 conf.secondary_sources.number = 500;
 x0 = secondary_source_positions(conf);
-%% --- NFCHOA
-%d = driving_function_imp_nfchoa(x0,xs,src,conf);
-%d = convolution(d,pulse);
-%for jj=1:length(X)
-%    p = zeros(size(t));
-%    for ii=1:length(t)
-%        progress_bar(ii,length(t))
-%        p(ii) = sound_field_imp(X(jj),Y(jj),Z,x0,'ps',d,t(ii),conf);
-%    end
-%    gp_save(sprintf('lowpass_nfchoa_X%.2f_Y%.2f.txt',X(jj),Y(jj)),[t/conf.fs p]);
-%end
+% --- NFCHOA
+d = driving_function_imp_nfchoa(x0,xs,src,conf);
+d = convolution(d,pulse);
+for jj=1:length(X)
+    p = zeros(size(t));
+    for ii=1:length(t)
+        progress_bar(ii,length(t))
+        p(ii) = sound_field_imp(X(jj),Y(jj),Z,x0,'ps',d,t(ii),conf);
+    end
+    gp_save(sprintf('lowpass_nfchoa_X%.2f_Y%.2f.txt',X(jj),Y(jj)),[t/conf.fs p]);
+end
 % --- WFS
 x0 = secondary_source_selection(x0,xs,src);
 x0 = secondary_source_tapering(x0,conf);
@@ -83,31 +83,31 @@ end
 %% ===== Sampled swecondary sources ======================================
 conf.secondary_sources.number = 64;
 x0 = secondary_source_positions(conf);
-%% --- NFCHOA
-%conf.nfchoa.order = 256;
-%d = driving_function_imp_nfchoa(x0,xs,src,conf);
-%d = convolution(d,pulse);
-%for jj=1:length(X)
-%    p = zeros(size(t));
-%    for ii=1:length(t)
-%        progress_bar(ii,length(t))
-%        p(ii) = sound_field_imp(X(jj),Y(jj),Z,x0,'ps',d,t(ii),conf);
-%    end
-%    gp_save(sprintf('lowpass_nfchoa_X%.2f_Y%.2f_nls64.txt',X(jj),Y(jj)),[t/conf.fs p]);
-%end
-%% --- NFCHOA band limited
-%conf.nfchoa.order = [];
-%d = driving_function_imp_nfchoa(x0,xs,src,conf);
-%d = convolution(d,pulse);
-%for jj=1:length(X)
-%    p = zeros(size(t));
-%    for ii=1:length(t)
-%        progress_bar(ii,length(t))
-%        p(ii) = sound_field_imp(X(jj),Y(jj),Z,x0,'ps',d,t(ii),conf);
-%    end
-%    gp_save(sprintf('lowpass_nfchoa_X%.2f_Y%.2f_nls64_band_limited.txt',X(jj),Y(jj)), ...
-%        [t/conf.fs p]);
-%end
+% --- NFCHOA
+conf.nfchoa.order = 256;
+d = driving_function_imp_nfchoa(x0,xs,src,conf);
+d = convolution(d,pulse);
+for jj=1:length(X)
+    p = zeros(size(t));
+    for ii=1:length(t)
+        progress_bar(ii,length(t))
+        p(ii) = sound_field_imp(X(jj),Y(jj),Z,x0,'ps',d,t(ii),conf);
+    end
+    gp_save(sprintf('lowpass_nfchoa_X%.2f_Y%.2f_nls64.txt',X(jj),Y(jj)),[t/conf.fs p]);
+end
+% --- NFCHOA band limited
+conf.nfchoa.order = [];
+d = driving_function_imp_nfchoa(x0,xs,src,conf);
+d = convolution(d,pulse);
+for jj=1:length(X)
+    p = zeros(size(t));
+    for ii=1:length(t)
+        progress_bar(ii,length(t))
+        p(ii) = sound_field_imp(X(jj),Y(jj),Z,x0,'ps',d,t(ii),conf);
+    end
+    gp_save(sprintf('lowpass_nfchoa_X%.2f_Y%.2f_nls64_band_limited.txt',X(jj),Y(jj)), ...
+        [t/conf.fs p]);
+end
 % --- WFS
 x0 = secondary_source_selection(x0,xs,src);
 x0 = secondary_source_tapering(x0,conf);
@@ -130,17 +130,17 @@ conf.bandpassfhigh = 20000;
 %% ===== Continuous secondary sources =====================================
 conf.secondary_sources.number = 500;
 x0 = secondary_source_positions(conf);
-%% --- NFCHOA
-%d = driving_function_imp_nfchoa(x0,xs,src,conf);
-%d = convolution(d,pulse);
-%for jj=1:length(X)
-%    p = zeros(size(t));
-%    for ii=1:length(t)
-%        progress_bar(ii,length(t))
-%        p(ii) = sound_field_imp(X(jj),Y(jj),Z,x0,'ps',d,t(ii),conf);
-%    end
-%    gp_save(sprintf('highpass_nfchoa_X%.2f_Y%.2f.txt',X(jj),Y(jj)),[t/conf.fs p]);
-%end
+% --- NFCHOA
+d = driving_function_imp_nfchoa(x0,xs,src,conf);
+d = convolution(d,pulse);
+for jj=1:length(X)
+    p = zeros(size(t));
+    for ii=1:length(t)
+        progress_bar(ii,length(t))
+        p(ii) = sound_field_imp(X(jj),Y(jj),Z,x0,'ps',d,t(ii),conf);
+    end
+    gp_save(sprintf('highpass_nfchoa_X%.2f_Y%.2f.txt',X(jj),Y(jj)),[t/conf.fs p]);
+end
 % --- WFS
 x0 = secondary_source_selection(x0,xs,src);
 x0 = secondary_source_tapering(x0,conf);
@@ -158,31 +158,31 @@ end
 %% ===== Sampled swecondary sources ======================================
 conf.secondary_sources.number = 64;
 x0 = secondary_source_positions(conf);
-%% --- NFCHOA
-%conf.nfchoa.order = 256;
-%d = driving_function_imp_nfchoa(x0,xs,src,conf);
-%d = convolution(d,pulse);
-%for jj=1:length(X)
-%    p = zeros(size(t));
-%    for ii=1:length(t)
-%        progress_bar(ii,length(t))
-%        p(ii) = sound_field_imp(X(jj),Y(jj),Z,x0,'ps',d,t(ii),conf);
-%    end
-%    gp_save(sprintf('highpass_nfchoa_X%.2f_Y%.2f_nls64.txt',X(jj),Y(jj)),[t/conf.fs p]);
-%end
-%% --- NFCHOA band limited
-%conf.nfchoa.order = [];
-%d = driving_function_imp_nfchoa(x0,xs,src,conf);
-%d = convolution(d,pulse);
-%for jj=1:length(X)
-%    p = zeros(size(t));
-%    for ii=1:length(t)
-%        progress_bar(ii,length(t))
-%        p(ii) = sound_field_imp(X(jj),Y(jj),Z,x0,'ps',d,t(ii),conf);
-%    end
-%    gp_save(sprintf('highpass_nfchoa_X%.2f_Y%.2f_nls64_band_limited.txt',X(jj),Y(jj)), ...
-%        [t/conf.fs p]);
-%end
+% --- NFCHOA
+conf.nfchoa.order = 256;
+d = driving_function_imp_nfchoa(x0,xs,src,conf);
+d = convolution(d,pulse);
+for jj=1:length(X)
+    p = zeros(size(t));
+    for ii=1:length(t)
+        progress_bar(ii,length(t))
+        p(ii) = sound_field_imp(X(jj),Y(jj),Z,x0,'ps',d,t(ii),conf);
+    end
+    gp_save(sprintf('highpass_nfchoa_X%.2f_Y%.2f_nls64.txt',X(jj),Y(jj)),[t/conf.fs p]);
+end
+% --- NFCHOA band limited
+conf.nfchoa.order = [];
+d = driving_function_imp_nfchoa(x0,xs,src,conf);
+d = convolution(d,pulse);
+for jj=1:length(X)
+    p = zeros(size(t));
+    for ii=1:length(t)
+        progress_bar(ii,length(t))
+        p(ii) = sound_field_imp(X(jj),Y(jj),Z,x0,'ps',d,t(ii),conf);
+    end
+    gp_save(sprintf('highpass_nfchoa_X%.2f_Y%.2f_nls64_band_limited.txt',X(jj),Y(jj)), ...
+        [t/conf.fs p]);
+end
 % --- WFS
 x0 = secondary_source_selection(x0,xs,src);
 x0 = secondary_source_tapering(x0,conf);
