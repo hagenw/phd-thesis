@@ -67,3 +67,8 @@ This can be done by running the following commands from the `sfs/` and
 
 Now everything is prepared and you can start to reproduce any figure in the
 thesis.
+
+
+## Licence
+
+[Creative Commons Attribution 3.0 (CC BY 3.0)](https://creativecommons.org/licenses/by/3.0/)
