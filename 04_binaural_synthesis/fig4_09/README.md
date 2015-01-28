@@ -12,7 +12,7 @@ front, left, right, or back of the listener.
 
 Bash:
 ```Bash
-$ gnuplot pinta_recordings
+$ gnuplot pinta_recordings.gnu
 ```
 
 If you want to do also the recalculation using Matlab/Octave you first have to
