@@ -44,3 +44,4 @@ to
 ```Matlab
 [sos,~] = zp2sos(p,z*c/R,2,'down','none');
 ```
+The same solution holds for Fig. 3.14, Fig. 3.15.
