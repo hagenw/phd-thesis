@@ -12,5 +12,5 @@ shown.
 
 Bash:
 ```Bash
-$ gnuplot binaural_results
+$ gnuplot binaural_results.gnu
 ```
