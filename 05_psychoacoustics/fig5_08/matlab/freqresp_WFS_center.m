@@ -12,7 +12,7 @@
 clear all
 addpath('sfs-master-0.2.2');
 SFS_start;
-conf=SFS_config;
+conf=SFS_config_example;
 conf.array='circle';
 L=3;
 no_of_speaker=2*14;

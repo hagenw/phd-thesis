@@ -29,4 +29,9 @@ ir = ir_wfs_25d([0 0], pi/2, [0 2.5], 'ps',L,irs,conf);
 normalizedamplitude=db(a)/abs(max(db(a(1:50))))+1; % Normalize
 hpref_low=find(abs(normalizedamplitude)>0.1,1,'first'); % Find starting point
 
+if isempty(hpref_low)
+    hpref_low = 1;
+end
+
+
 end
