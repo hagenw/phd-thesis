@@ -13,10 +13,17 @@ load 'border.cfg'
 load 'moreland.pal'
 
 # Styling
-#set style line 11  lc rgb '#d6d7d9' pt 65 lt 1 lw 1 # grey
-set style line 11  lc rgb '#a6a6a6' pt 65 lt 1 lw 1
-set style line 12 lc rgb '#000000' pt 7 lt 1 lw 2 # black
-set style line 13 lc rgb '#d6d7d9' lt 4 lw 1 # lightgrey
+set linetype 1 lt 1 lc rgb '#3b4cc0' #
+set linetype 2 lt 1 lc rgb '#688aef' #
+set linetype 3 lt 1 lc rgb '#99baff' #
+set linetype 4 lt 1 lc rgb '#c9d8ef' #
+set linetype 5 lt 1 lc rgb '#edd1c2' #
+set linetype 6 lt 1 lc rgb '#f7a789' #
+set linetype 7 lt 1 lc rgb '#e36a53' #
+set linetype 8 lt 1 lc rgb '#b40426' #
+set linetype 11  lc rgb '#a6a6a6' pt 65 lt 1 lw 1
+set linetype 12 lc rgb '#000000' pt 7 lt 1 lw 2 # black
+set linetype 13 lc rgb '#d6d7d9' lt 4 lw 1 # lightgrey
 set linetype 12 lc rgb '#000000'
 
 set size ratio -1
