@@ -47,3 +47,4 @@ for ii=1:size(list_pos,1)
 end
 
 gp_save('../../fig5_09/coloration_wfs_freq_resp_moving.txt',f',ffts);
+SFS_stop;
