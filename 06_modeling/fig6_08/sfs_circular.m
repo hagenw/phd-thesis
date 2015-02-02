@@ -5,7 +5,8 @@ sfs_configuration;
 % load HRTFs
 hrtf = read_irs('QU_KEMAR_anechoic_3m.mat',conf);
 % load lookup table
-lookup = load('lookup.mat');
+load('lookup.mat');
+lookup = lookup_table;
 % resolution
 resolution = 100; % has to be even
 
