@@ -23,7 +23,8 @@ conf.fs = 44100;
 
 %% ===== Lookup table ====================================================
 % load lookup table
-lookup = load('lookup.mat');
+load('lookup.mat');
+lookup = lookup_table;
 
 % get noise signals
 for nn=1:5
@@ -44,7 +45,7 @@ for jj=1:size(files_fs,2)
             phi_tmp_std = [];
             % estiamte direction of auditory event
             for nn=1:5
-                [phi_tmp(nn),phi_tmp_std(nn)] = estimate_azimuth(auralize_ir(ir(:,vp*2-1:vp*2),noise_sig(:,nn),1,conf),lookup);
+                [phi_tmp(nn),phi_tmp_std(nn)] = wierstorf2013estimateazimuth(auralize_ir(ir(:,vp*2-1:vp*2),noise_sig(:,nn),1,conf),lookup);
                 phi_tmp(nn) = phi_tmp(nn) + (vp-1);
             end
             phi_vp_mean(vp) = mean(phi_tmp);
