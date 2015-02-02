@@ -6,7 +6,8 @@ sfs_configuration;
 conf.N = 2048;
 hrtf = read_irs('QU_KEMAR_anechoic_3m.mat',conf);
 % load lookup table
-lookup = load('lookup.mat');
+load('lookup.mat');
+lookup = lookup_table;
 
 
 %% ===== Configuration ===================================================
