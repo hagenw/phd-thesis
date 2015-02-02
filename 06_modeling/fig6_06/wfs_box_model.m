@@ -5,7 +5,8 @@ sfs_configuration;
 % load HRTFs
 hrtf = read_irs('QU_KEMAR_anechoic_3m.mat',conf);
 % load lookup table
-lookup = load('lookup.mat');
+load('lookup.mat');
+lookup = lookup_table;
 
 % settings for all loudspeaker arrays
 conf.secondary_sources.size = 3.2;
