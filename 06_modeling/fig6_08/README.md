@@ -14,7 +14,7 @@ Matlab/Octave:
 ```Matlab
 >> sfs_circular
 ```
-The above command will run for several hours.
+The above command will run for several hours/days, depending on your PC.
 
 Bash:
 ```Bash
