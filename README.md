@@ -68,6 +68,9 @@ This can be done by running the following commands from the `sfs/` and
 Now everything is prepared and you can start to reproduce any figure in the
 thesis.
 
+The scripts presented here were tested with Matlab 8.1.0.604 (R2013a), Octave
+3.8.2, gnuplot 4.6 patchlevel 6.
+
 
 ## Licence
 
