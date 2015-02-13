@@ -19,7 +19,7 @@ corresponding directory is indicating those cases.
 
 The WFS driving functions for a focused source (2.71) and (2.72) have the
 direction in time. The exponential function at their ends should read
-```
+```Latex
 e^{i\frac{omega}{c}|x_0-x_\text{s}}
 ```
 
