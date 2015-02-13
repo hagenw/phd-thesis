@@ -1,8 +1,8 @@
 Perceptual Assessment of Sound Field Synthesis
-==========
+==============================================
 
-This repository provides you the following PhD thesis, together with all the
-software you need to reproduce all figures presented in the thesis.
+This repository provides you the following PhD thesis, together with Errata and
+all the software you need to reproduce all figures presented in the thesis.
 
 [Hagen Wierstorf - Perceptual Assessment of Sound Field
 Synthesis](wierstorf2014-perceptual_assessment_of_sound_field_synthesis.pdf)
@@ -15,7 +15,15 @@ mentioned below and Matlab or Octave. Some of the code runs only in Octave at
 the moment, but it should be easily adoptable to Matlab. A README in the
 corresponding directory is indicating those cases.
 
-## Requirements
+## Errata
+
+The WFS driving functions for a focused source (2.71) and (2.72) have the
+direction in time. The exponential function at their ends should read
+```
+e^{i\frac{omega}{c}|x_0-x_\text{s}}
+```
+
+## Software Requirements
 
 ### Sound Field Synthesis Toolbox
 
