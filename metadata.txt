@@ -1,0 +1,15 @@
+InfoBegin
+InfoKey: Title
+InfoValue: Perceptual Assessment of Sound Field Synthesis
+InfoBegin
+InfoKey: Author
+InfoValue: Hagen Wierstorf
+InfoBegin
+InfoKey: Subject
+InfoValue: Dissertation
+InfoBegin
+InfoKey: Keywords
+InfoValue: WFS, HOA, localization, coloration, quality
+inFoBegin
+InfoKey: Creator
+InfoValue: LaTeX
