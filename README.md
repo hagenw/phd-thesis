@@ -34,6 +34,7 @@ with release 1.0.0. Under Linux this can be done the following way:
 $ git clone https://github.com/sfstoolbox/sfs.git
 $ cd sfs
 $ git checkout 3730bc0
+$ cd ..
 ```
 
 
@@ -46,6 +47,7 @@ can be done the following way:
 $ git clone https://github.com/hagenw/amtoolbox.git
 $ cd amtoolbox
 $ git checkout aed0198
+$ cd ..
 ```
 
 The [Auditory Modelling Toolbox](http://amtoolbox.sourceforge.net/) depends
@@ -56,6 +58,7 @@ way:
 $ git clone https://github.com/hagenw/ltfat.git
 $ cd ltfat
 $ git checkout 3f9af4a
+$ cd ..
 ```
 
 ### Setting up Toolboxes in Matlab
