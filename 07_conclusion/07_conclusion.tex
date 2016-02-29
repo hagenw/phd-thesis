@@ -1,0 +1,93 @@
+\chapter{Conclusions}
+\label{cha:conclusions}
+
+\firstthought{Sound field synthesis} allows to create controllable sound fields
+in an extended volume. This emphasizes the usage of such methods in spatial
+sound presentation in order to convey a rich audio experience to the
+listener. The shortcoming of \ac{SFS} is its underlying theoretical assumption
+of continuous loudspeaker distributions that are not possible to build in
+practice. 
+Nonetheless, experiences with build sound field synthesis setups showed that
+a spatial convincing presentation is nonetheless possible, by accepting
+slight degradations of the perceived timbre.
+
+The goal of this thesis was to investigate in more detail the employment
+of sound field synthesis for spatial sound presentations.
+In the introduction a couple of
+corresponding research questions were formulated that are repeated here
+and tried to answered in the light of the achieved results.
+\emph{What is the best way to give a good spatial
+impression of the presented sound? How many loudspeakers are needed to do this?
+Is it possible with the current hardware limitations to create a whole sound
+field in a convincing way? What is the influence of the spatial impression on
+the overall quality a listener experiences while listening to the played back
+sound?}
+
+The results from the spatial fidelity experiments in
+Section\,\ref{sec:localization} indicate that especially
+\ac{WFS} gives a good spatial impression in the whole audience area.
+This was achieved even for the relatively low number of 28 loudspeakers for a
+circular loudspeaker array with a diameter of $3$\,m and a corresponding
+distance between them of $34$\,cm. Further \ac{WFS} can be
+implemented in an efficient way and arbitrary geometries of
+loudspeaker arrays can be used.
+
+Considering not only the spatial but the overall impression of the synthesized
+sound field, results become more subtle. Rumsey et al.\autocite{Rumsey2005}
+conducted an experiment in which listeners rated the spatial fidelity, timbral
+fidelity, and the perceived overall quality of stereophonic surround setups. The
+results show that the contribution of spatial fidelity to the overall quality
+is only $30\%$. Timbral fidelity accounts for the rest. Their findings
+demonstrate that for \ac{SFS} timbral fidelity might have the same importance for
+the perceived quality.
+The results from the experiments in
+Section\,\ref{sec:timbral_fidelity} show that timbral fidelity could only be
+achieved by employing more than 3\,000 loudspeakers for a
+circular loudspeaker array with a diameter of $3$\,m. However, practical setups
+with the same size will seldom have more than 64 loudspeakers. In this case
+timbral fidelity cannot be achieved. On the other hand the same is true for
+two-channel stereophony, without large impairments of the perceived quality.
+
+Further investigations of sound field synthesis in comparison to stereophonic techniques
+should be carried out to assess its perceived quality.
+Therefore, more complex sound scenes should be synthesized and listener should
+rate the plausibility of the corresponding auditory scene.
+Another research topic is of interest in order to understand the influence of
+sound field errors on its perceived quality. The experimental results from
+this thesis point to a close connection between the perception of coloration and
+the precedence effect and one hypothesis is that both are part of the same
+mechanism in the brain.
+
+By limiting the audience area to a region of approximately the size of a human
+head, band-limited \ac{NFC-HOA} is an interesting approach that can provide a
+convincing sound field.
+The limitation to a small region enables the synthesis of an error free sound
+field which achieves spatial and timbral fidelity in this region.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Final stuff
+
+\newpage
+
+\newpage
+
+\setcounter{footnote}{0}
+
+\section*{Further Resources}
+%
+This section is devoted to the acknowledgements of further literature that had
+an impact on the writing of this thesis but was not mentioned so far.
+
+The underlying design principals of the figures in this thesis are motivated by
+Tuftes work.\sidenote[][-1.5cm]{\cite[E.g.][]{Tufte2011}}
+The colormap used for plotting all of the numerical sound field simulations is
+given by Moreland.\sidenote[][-0.8cm]{\cite{Moreland2009}} Most of the colors in the other
+figures are based on colormaps published by
+Brewer.\sidenote{\url{colorbrewer2.org}{http://colorbrewer2.org}\newline\cite{Brewer2005}}
+
+The idea of predicting the localization in the whole audience area has its
+origin in a paper by Merchel et al.\autocite{Merchel2010}
+
+

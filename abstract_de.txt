@@ -1,0 +1,18 @@
+Die vorliegende Arbeit untersucht die beiden Schallfeldsyntheseverfahren
+Wellenfeldsynthese und Nahfeld-entzerrtes Ambisonics höherer Ordnung. Sie fasst
+die Theorie der beiden Verfahren zusammen und stellt eine Software-Umgebung zur
+Verfügung, um beide Verfahren numerisch zu simulieren. Diskutiert werden
+mögliche Abweichungen der mit realen Lautsprechergruppen synthetisierten
+Schallfelder. Dies geschieht sowohl auf theoretischer Basis als auch in einer
+Reihe von psychoakustischen Experimenten. Die Experimente untersuchen dabei die
+räumliche und klangliche Treue und zeitlich-spektrale Artefakte der verwendeten
+Systeme. Systematisch wird dies für eine große Anzahl von verschiedenen
+Lautsprechergruppen angewendet. Die Experimente werden mit Hilfe von dynamischer
+binauraler Synthese durchgeführt, damit auch Lautsprechergruppen mit einem
+Abstand von unter 1 cm zwischen den Lautsprechern untersucht werden können. Die
+Ergebnisse zeigen, dass räumliche Treue bereits mit einem Lautsprecherabstand
+von 20 cm erzielt werden kann, während klangliche Treue nur mit Abständen
+kleiner als 1 cm möglich ist. Zeitlich-spektrale Artefakte treten nur bei der
+Synthese von fokussierten Quellen auf. Am Ende wird ein binaurales Modell
+präsentiert, welches in der Lage ist die räumliche Treue für beliebige
+Lautsprechergruppen vorherzusagen.
