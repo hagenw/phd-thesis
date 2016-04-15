@@ -5,9 +5,9 @@ This repository provides you the following PhD thesis, together with Errata and
 all the software you need to reproduce all figures presented in the thesis.
 
 [Hagen Wierstorf - Perceptual Assessment of Sound Field
-Synthesis](http://opus4.kobv.de/opus4-tuberlin/files/6063/wierstorf_hagen.pdf)
+Synthesis](http://dx.doi.org/10.14279/depositonce-4310)
 
-[![Titlepage](img/thesis_titlepage.png)](http://opus4.kobv.de/opus4-tuberlin/files/6063/wierstorf_hagen.pdf)
+[![Titlepage](img/thesis_titlepage.png)](http://dx.doi.org/10.14279/depositonce-4310)
 
 The software is spread in different directories named after the chapter and
 figure numbers. In order to run the code you will need the external toolboxes
