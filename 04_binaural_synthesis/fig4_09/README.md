@@ -16,8 +16,7 @@ $ gnuplot pinta_recordings.gnu
 ```
 
 If you want to do also the recalculation using Matlab/Octave you first have to
-download the binaural recordings from the [Impulse Response Measurements
-repository](https://dev.qu.tu-berlin.de/projects/measurements/repository/show/2012-01-kemar-pinta-vs-brir-recordings/wav).
+download the binaural recordings from  [10.5281/zenodo.55421](http://dx.doi.org/10.5281/zenodo.55418).
 Afterwards run the following in Matlab/Octave:
 ```Matlab
 >> pinta_recordings
