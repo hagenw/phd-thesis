@@ -50,3 +50,7 @@ Note, that the results will not be automatically inserted into the result files
 in the main directory and the resulting plot will only present the mean results
 assuming always a single perceived direction. If you want to include the results
 for two perceived directions you have to do it manually.
+
+## Published data
+
+The binaural room scanning (BRS) files used together with the SoundScape Renderer in the listening experiment are available at [doi:10.5281/zenodo.55427](http://dx.doi.org/10.5281/zenodo.55427). The results of the listening experiment are also available at [doi:10.5281/zenodo.55439](http://dx.doi.org/10.5281/zenodo.55439).
