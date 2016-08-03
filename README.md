@@ -1,8 +1,10 @@
 Perceptual Assessment of Sound Field Synthesis
 ==============================================
 
-This repository provides you the following PhD thesis, together with Errata and
-all the software you need to reproduce all figures presented in the thesis.
+This repository provides you the following PhD thesis, together with
+[Errata](http://nbviewer.jupyter.org/github/hagenw/phd-thesis/blob/master/ERRATA.ipynb)
+and all the software you need to reproduce all figures presented in the
+thesis.
 
 [Hagen Wierstorf - Perceptual Assessment of Sound Field
 Synthesis](http://dx.doi.org/10.14279/depositonce-4310)
@@ -14,14 +16,6 @@ figure numbers. In order to run the code you will need the external toolboxes
 mentioned below and Matlab or Octave. Some of the code runs only in Octave at
 the moment, but it should be easily adoptable to Matlab. A README in the
 corresponding directory is indicating those cases.
-
-## Errata
-
-The WFS driving functions for a focused source (2.71) and (2.72) have the
-direction in time. The exponential function at their ends should read
-```
-e^{i\frac{omega}{c}|x_0-x_\text{s}|}
-```
 
 ## Software Requirements
 
