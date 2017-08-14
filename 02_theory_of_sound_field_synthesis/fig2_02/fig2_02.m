@@ -1,4 +1,6 @@
 clear all;
+addpath('../../matlab');
+create_dir('data');
 
 %% ===== Configuration ===================================================
 X = [-9 9]; % / m
@@ -48,12 +50,12 @@ x03 = bsxfun(@plus,h2,[6 0 0 0 0 0 0]);      % third right
 x_03 = bsxfun(@plus,h2,[-6 0 0 0 0 0 0]);    % third left
 x0 = [x_03; x_02; x_01; x00; x01; x02; x03]; % put all together
 conf.secondary_sources.x0 = x0;              % store it
-gp_save_loudspeakers('concave_array.txt',x0);
+gp_save_loudspeakers('data/concave_array.txt',x0);
 x0 = secondary_source_selection(x0,xs,src);
 % detect the different parts of the array and store them with an empty line
 % between them in order to get now continuous line in the plot
 dist = secondary_source_distance(conf.secondary_sources.x0,1);
-file = 'concave_array_selected.txt';
+file = 'data/concave_array_selected.txt';
 fid = fopen(file,'w');
 fprintf(fid,'# x0 y0 z0 phi ls_activity\n');
 fclose(fid);
@@ -81,4 +83,4 @@ end
 
 %% ===== Wave Field Synthesis ============================================
 [P,x,y] = sound_field_mono_wfs(X,Y,Z,xs,src,f,conf);
-gp_save_matrix('concave_array.dat',x,y,real(P));
+gp_save_matrix('data/concave_array.dat',x,y,real(P));
