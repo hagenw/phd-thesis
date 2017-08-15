@@ -1,0 +1,23 @@
+\documentclass[a4paper, oneside, nobib, notoc, justified]{tufte-book}
+
+% Load packages
+\usepackage{graphicx,xcolor}
+\usepackage{tikz}
+\pgfrealjobname{fig}
+
+% Commands
+\newcommand{\ft}[0]{\footnotesize}
+\newcommand{\scs}[0]{\scriptsize}
+\newcommand{\sm}[0]{\small}
+
+\begin{document}
+    \beginpgfgraphicnamed{fig2_03}
+    \small
+    \begin{tikzpicture}
+        \draw (0,0)       node {\includegraphics[width=.8\columnwidth]{src/sound_field_dimensionality}};
+        \draw (-0.75,1.2) node {2.5D};
+        \draw (-3.75,1.2) node {3D};
+        \draw (2.05,1.2)  node {2D};
+    \end{tikzpicture}
+    \endpgfgraphicnamed
+\end{document}
