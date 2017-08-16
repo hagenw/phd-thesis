@@ -1,26 +1,23 @@
 ![Fig 3.15](fig3_15.png)
 
-**Figure 3.15**: Sound pressure of a low
-and high-frequency cosine shaped impulse synthesized as plane wave by
-NFC-HOA (2.45) and WFS (2.57) at three
-listening positions. A fixed offset was
-added to the sound pressure at two
+**Figure 3.15**: Sound pressure of a low and high-frequency cosine shaped
+impulse synthesized as plane wave by NFC-HOA (2.45) and WFS (2.57) at three
+listening positions. A fixed offset was added to the sound pressure at two
 listening positions for a better visualization. The low-frequency impulses are
-presented in blue, the high-frequency
-impulses in red. Parameters: x_s =
-(0,−1,0), x_ref = (0,0,0) m, circular
-secondary source distribution with a diameter of 3 m.
+presented in blue, the high-frequency impulses in red. Parameters: x_s =
+(0,−1,0), x_ref = (0,0,0) m, circular secondary source distribution with a
+diameter of 3 m.
 
 ## Steps for reproduction
 
 Matlab/Octave:
 ```Matlab
->> sound_field_time_fixed_filtered
+>> fig3_15
 ```
 
 Bash:
 ```Bash
-$ gnuplot sound_field_time_fixed_filtered.gnu
+$ gnuplot fig3_15.plt
 ```
 
 ## Problem solving
