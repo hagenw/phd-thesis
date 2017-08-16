@@ -1,5 +1,5 @@
 clear all;
-
+create_dir('data');
 
 %% ===== Configuration ===================================================
 X = [0 0 2]; % / m
@@ -9,7 +9,6 @@ f = 1000; % / Hz
 xsy{1} = [8:-0.01:-3.9];
 xsy{2} = [8:-0.01:-1.9];
 xsy{3} = [8:-0.01:-1.9];
-
 
 %% ===== Toolbox settings ================================================
 conf.resolution = 1000; % / samples
@@ -23,7 +22,6 @@ conf.usetapwin = false;
 conf.tapwinlen = 0.3;
 conf.showprogress = false;
 
-
 %% ===== Secondary Sources ===============================================
 conf.secondary_sources.size = 100; % / m
 conf.secondary_sources.center = [0 0 0]; % / m
@@ -33,7 +31,6 @@ conf.secondary_sources.x0 = [];
 % get secondary sources and store them, to do this calculation only once
 x0 = secondary_source_positions(conf);
 conf.secondary_sources.x0 = x0;
-
 
 for jj=1:length(Y)
 
@@ -46,7 +43,6 @@ for jj=1:length(Y)
         % --- line source ---
         P1(ii) = sound_field_mono_line_source(X(jj),Y(jj),Z,xs,f,conf);
     end
-
 
     %% ===== Wave Field Synthesis ============================================
     for ii=1:length(xsy{jj})
@@ -78,6 +74,7 @@ for jj=1:length(Y)
     %% ===== Save to File ====================================================
     M = [xsy{jj}' db(abs(P1')) db(abs(P2')) P3'];
     header = 'y line_source WFS_2D_line_source WFS_2D_line_source_low_pass';
-    file = sprintf('amplitudes_moving_source_2D_X%.1f_Y%.1f.txt',X(jj),Y(jj));
+    file = sprintf('data/amplitudes_moving_source_2D_X%.1f_Y%.1f.txt', ...
+                   X(jj),Y(jj));
     gp_save(file,M,header);
 end
