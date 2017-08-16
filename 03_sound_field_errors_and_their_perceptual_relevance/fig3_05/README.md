@@ -1,11 +1,10 @@
 ![Fig 3.5](fig3_05.png)
 
-**Figure 3.5**: Size of the focus point ∆s as
-given by Fraunhofer diffraction.
+**Figure 3.5**: Size of the focus point ∆s as given by Fraunhofer diffraction.
 
 ## Steps for reproduction
 
 Bash:
 ```Bash
-$ gnuplot diffraction_pattern.gnu
+$ gnuplot fig3_05.plt
 ```
