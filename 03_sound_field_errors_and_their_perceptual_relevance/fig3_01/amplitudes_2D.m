@@ -1,11 +1,11 @@
 clear all
+create_dir('data');
 
 %% ===== Configuration ===================================================
 X = 0; % / m
 Y = [-5.5 1.5]; % / m
 Z = 0; % / m
 f = 1000; % / Hz
-
 
 %% ===== Toolbox settings ================================================
 conf.resolution = 1000; % / samples
@@ -20,7 +20,6 @@ conf.usetapwin = false;
 conf.tapwinlen = 0.3;
 conf.showprogress = true;
 
-
 %% ===== Secondary Sources ===============================================
 conf.secondary_sources.size = 100000; % / m
 conf.secondary_sources.center = [0 0 0]; % / m
@@ -31,7 +30,6 @@ conf.secondary_sources.x0 = [];
 x0 = secondary_source_positions(conf);
 conf.secondary_sources.x0 = x0;
 
-
 %% ===== Reference Sources ===============================================
 % --- point source ---
 [P1,~,y] = sound_field_mono_point_source(X,Y,Z,[0 1 0],f,conf);
@@ -41,7 +39,6 @@ conf.secondary_sources.x0 = x0;
 [P3,~,y] = sound_field_mono_plane_wave(X,Y,Z,[0 -1 0],f,conf);
 % --- focused source ---
 [P4,~,y] = sound_field_mono_plane_wave(X,Y,Z,[0 -1 0],f,conf);
-
 
 %% ===== Wave Field Synthesis ============================================
 % --- point source ---
@@ -63,14 +60,13 @@ src = 'pw';
 xs = [0 -1 0 0 -1 0];
 src = 'fs';
 [P8,~,y] = sound_field_mono_wfs(X,Y,Z,xs,src,f,conf);
-
 % apply low pass filter to focused source to get rid of diffraction effects
 [b,a] = butter(4,600/22050,'low');
 P9 = filtfilt(b,a,db(abs(P8)));
 
 %% ===== Save to File ====================================================
 M = [y db(abs([P1 P2 P3 P4 P5 P6 P7 P8])) P9 db(abs(P5_ps))];
-header = ['y point_source line_source plane_wave focused source WFS_2D_point_source ', ...
-    'WFS_2D_line_source WFS_2D_plane_wave WFS_2D_focused_source ', ...
-    'WFS_2D_point_source_wo_approx'];
-gp_save('amplitudes_2D.txt',M,header);
+header = ['y point_source line_source plane_wave focused source ', ...
+    'WFS_2D_point_source WFS_2D_line_source WFS_2D_plane_wave ', ...
+    'WFS_2D_focused_source WFS_2D_point_source_wo_approx'];
+gp_save('data/amplitudes_2D.txt',M,header);
