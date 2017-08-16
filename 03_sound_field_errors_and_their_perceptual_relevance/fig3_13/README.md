@@ -1,16 +1,14 @@
 ![Fig 3.13](fig3_13.png)
 
 **Figure 3.13**: Sound pressure of a cosine shaped impulse synthesized as a
-plane wave by NFC-HOA (2.45) and
-WFS (2.57). Parameters: x_s = (0,−1,0),
-x_ref = (0,0,0), t = 4.6 ms, 64 secondary
-sources for the sampled distributions.
+plane wave by NFC-HOA (2.45) and WFS (2.57). Parameters: n_k = (0,−1,0),
+x_ref = (0,0,0), t = 4.6 ms, 64 secondary sources for the sampled distributions.
 
 ## Steps for reproduction
 
 Matlab/Octave:
 ```Matlab
->> sound_field_time
+>> fig3_13
 ```
 The above command will need an internet connection as it will download mat-files
 containing zeroing of Bessel functions of higher orders.
@@ -22,7 +20,7 @@ thesis and not part of the NFC-HOA solution.
 
 Bash:
 ```Bash
-$ gnuplot sound_field_time.gnu
+$ gnuplot fig3_13.plt
 ```
 
 ## Problem solving
