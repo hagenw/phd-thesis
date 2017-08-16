@@ -1,4 +1,6 @@
 clear all;
+addpath('../../matlab');
+create_dir('data');
 
 %% ===== Configuration ===================================================
 X = [-2 2];
@@ -18,4 +20,4 @@ conf.showprogress = true;
 
 %% ===== Main ============================================================
 [P,x,y,z] = sound_field_mono_line_source(X,Y,Z,xs,f,conf);
-gp_save_matrix('sound_field_line_source.dat',x,y,real(P));
+gp_save_matrix('data/sound_field_line_source.dat',x,y,real(P));
