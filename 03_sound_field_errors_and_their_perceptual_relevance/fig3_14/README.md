@@ -1,25 +1,21 @@
 ![Fig 3.14](fig3_14.png)
 
-**Figure 3.14**: Sound pressure of cosine
-shaped impulse synthesized as a plane
-wave by NFC-HOA (2.45) and WFS (2.57)
-at three different listening positions. A
-fixed offset was added to the sound
-pressure at two listening positions for
-a better visualization. Parameters: x_s =
-(0,−1,0), x_ref = (0,0,0), circular
+**Figure 3.14**: Sound pressure of cosine shaped impulse synthesized as a plane
+wave by NFC-HOA (2.45) and WFS (2.57) at three different listening positions. A
+fixed offset was added to the sound pressure at two listening positions for a
+better visualization. Parameters: n_k = (0,−1,0), x_ref = (0,0,0), circular
 secondary source distribution with a diameter of 3 m.
 
 ## Steps for reproduction
 
 Matlab/Octave:
 ```Matlab
->> sound_field_time_fixed
+>> fig3_14
 ```
 
 Bash:
 ```Bash
-$ gnuplot sound_field_time_fixed.gnu
+$ gnuplot fig3_14.plt
 ```
 
 ## Problem solving
