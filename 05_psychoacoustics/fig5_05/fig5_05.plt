@@ -1,24 +1,27 @@
 #!/usr/bin/gnuplot
 #
-# Plot a historgram of the localization results for a loudspeaker array with 14
-# loudspeakers and the listener placed at (-1,-0.75,0)m for WFS and NFC-HOA with
-# different order M.
+# FIGURE 5.5: Distributions of the directions of the auditory event as rated by
+# the listeners at the position (-1, -0.75, 0) m for the loudspeaker array with
+# 14 loudspeakers. The results for a synthesized point source for WFS and
+# NFC-HOA for different orders M are shown. For WFS only the results for the
+# first 9 listeners were analyzed to have an equal number of answers as in the
+# case for NFC-HOA.
 #
-# AUTHOR: Hagen Wierstorf
-# gnuplot 4.6 patchlevel 0
+# AUTHOR:   Hagen Wierstorf
+# SOFTWARE: gnuplot 5.0 patchlevel 3
 
 reset
-set loadpath '../../gnuplot'
+set macros
+set loadpath '../../gnuplot' 'data'
 
-set terminal epslatex size 10cm,4.5cm color colortext
-set output 'sfs_localization_distributions.tex'
-
+load 'latex.cfg'
 load 'border.cfg'
 load 'grid.cfg'
 set grid xtics ytics mxtics
 load 'paired.pal'
-# plot the histogram in green
-#set style line 1 lc rgb 'green'
+
+set terminal epslatex size 10.3cm,4.5cm color colortext @small
+set output 'fig5_05.tex'
 
 unset key
 
@@ -43,17 +46,21 @@ set mxtics 2
 set lmargin 3
 set rmargin 0
 
-set multiplot layout 1,3
-set label 1 '\ft \ac{WFS}' at 96,18.5 right front
+set multiplot
+set size 0.325,1
+set origin 0.05,0
+set label 1 '\ft \acs{WFS}' at 96,18.5 right front
 plot 'wfs_ps_nls14_X-1.00_Y-0.75.txt' u (hist($1,width)):(1.0) smooth freq w boxes ls 1
+set origin 0.374,0
 set lmargin 1.5
 set rmargin 1.5
 load 'xborder.cfg'
 set format x '$%g\degree$'
-set label 1 '\ft \ac{NFC-HOA}'
+set label 1 '\ft \acs{NFC-HOA}'
 set label 2 '\ft $M=28$' at 96,16 right front
 set label 3 '\ft listener at $(-1,-0.75,0)$\,m' at 0,24 center front
 plot 'nfchoa_ps_nls14_order28_X-1.00_Y-0.75.txt' u (hist($1,width)):(1.0) smooth freq w boxes ls 1
+set origin 0.698,0
 set lmargin 0
 set rmargin 3
 set label 2 '\ft $M=7$'
@@ -65,3 +72,5 @@ set arrow from 70,10 to 42,6.4 nohead front ls 101
 plot 'nfchoa_ps_nls14_order7_X-1.00_Y-0.75.txt' i 0 u (hist($1,width)):(1.0) smooth freq w boxes ls 5,\
      ''                                         i 1 u (hist($1,width)):(1.0) smooth freq w boxes ls 1
 unset multiplot
+
+call 'plot.plt' 'fig5_05'
