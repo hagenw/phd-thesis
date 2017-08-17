@@ -1,23 +1,29 @@
 #!/usr/bin/gnuplot
 #
-# Plot coloration results for WFS and 56 secondary sources for different listening positions
+# FIGURE 5.11: Perceived coloration rated with the attribute pair very
+# different, no difference. The latter corresponds to a value of 0 in the
+# figure, the former to a value of 10. The values are written directly at the
+# listening position where the listener had to rate the coloration, and are
+# further highlighted by a corresponding color. The average confidence interval
+# is 1.2 over all positions.
 #
-# AUTHOR: Hagen Wierstorf
+# AUTHOR:   Hagen Wierstorf
+# SOFTWARE: gnuplot 5.0 patchlevel 3
 
 reset
 set macros
-set loadpath '../../gnuplot'
+set loadpath '../../gnuplot' 'data'
 
-set terminal epslatex size 10cm,6cm color colortext
-set output 'wfs_coloration_pos.tex'
-
+load 'latex.cfg'
 load 'localization.cfg'
 load 'array.cfg'
 load 'noborder.cfg'
 
+set terminal epslatex size 11.5cm,6cm color colortext @small
+set output 'fig5_11.tex'
+
 unset key
 set size ratio -1
-
 
 set cbrange [-1:1]
 
@@ -28,14 +34,15 @@ set rmargin 0
 
 unset colorbox
 
-
 set xrange [-2.1:2.1]
 set yrange [-2.1:2.6]
 
-set multiplot layout 1,2
+set multiplot
+set size 0.437,1
 
 # WFS point source, 56 secondary sources
 # noise
+set origin -0.03,0
 load 'blues.pal'
 set label 1 '\ft noise' at 0,0.5 center front tc ls 7
 set arrow 21 from 1.210,1.194 to 1.322,1.069 heads size 0.05,90,0 front ls 101
@@ -49,6 +56,7 @@ plot 'array_nls56_circular.txt'         @array_inactive w p,\
 unset arrow
 unset label 21
 # speech
+set origin 0.407,0
 load 'reds.pal'
 set label 1 '\ft speech' #at 0,0.5 center front tc ls 2
 set arrow from 2,-2 to 2,-1 heads size 0.05,90,0 ls 101
@@ -58,7 +66,7 @@ set label '\ft no difference'  at 2.1,-2 left front tc ls 101
 set label '\ft $0$'            at 1.9,-2 right front tc ls 101
 set label '\ft $5$'            at 1.9,-1.5 right front tc ls 101
 set label '\ft $10$'           at 1.9,-1 right front tc ls 101
-set label '\ft \ac{WFS}'       at -2.2,-1.5 center front tc ls 101
+set label '\ft \acs{WFS}'       at -2.2,-1.5 center front tc ls 101
 plot 'array_nls56_circular.txt'         @array_inactive w p,\
      'array_nls56_circular_wfs_ps.txt'  @array_active w p,\
      'wfs_coloration_pos.txt' i 0 u 1:2:3 w p pt 7 ps 2.5 lc palette,\
@@ -66,5 +74,7 @@ plot 'array_nls56_circular.txt'         @array_inactive w p,\
      set_point_source(0,2.5)            @point_source 
 
 unset multiplot
+
+call 'plot.plt' 'fig5_11'
 
 # vim: set textwidth=200:
