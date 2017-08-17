@@ -2,6 +2,10 @@
 % recordings in Pinta
 % here we are interested in the difference between simulating only one speaker
 % and simulating all speakers.
+function fig4_09()
+
+addpath('../../matlab');
+create_dir('data');
 
 fs = 44100;
 
@@ -50,17 +54,35 @@ for ii = 1:4
     ldiff_wfs28(:,ii) = ldiff_wfs28(:,ii) - mean(ldiff_wfs28(:,ii));
     ldiff_wfs14(:,ii) = ldiff_wfs14(:,ii) - mean(ldiff_wfs14(:,ii));
     % save
-    gp_save(sprintf('pinta_recordings_%i.txt',ii),[cf' ldiff_mono(:,ii) ldiff_wfs14(:,ii) ...
+    gp_save(sprintf('data/pinta_recordings_%i.txt',ii),[cf' ldiff_mono(:,ii) ldiff_wfs14(:,ii) ...
         ldiff_wfs28(:,ii) ldiff_wfs56(:,ii)],'cf mono wfs14 wfs28 wfs56');
 end
 
-% Weight for loudspeakers in WFS
-w56 = [6.7393e-04 0.029917 0.097947 0.14415 0.18970 0.23065 0.26140 ...
-       27782 0.28209 0.27782 0.26140 0.23065 0.18970 0.14415 0.097947 ... 
-       0.029917 6.7393e-04];
-w28 = [0.0026957 0.097947 0.18970 0.26140 0.28209 0.26140 0.18970 ...
-       0.097947 0.0026957];
-w14 = [0.097947 0.26140 0.26140 0.097947];
+%% Weight for loudspeakers in WFS
+%w56 = [6.7393e-04 0.029917 0.097947 0.14415 0.18970 0.23065 0.26140 ...
+%       27782 0.28209 0.27782 0.26140 0.23065 0.18970 0.14415 0.097947 ... 
+%       0.029917 6.7393e-04];
+%w28 = [0.0026957 0.097947 0.18970 0.26140 0.28209 0.26140 0.18970 ...
+%       0.097947 0.0026957];
+%w14 = [0.097947 0.26140 0.26140 0.097947];
+%
+%gp_save('data_pinta_recordings_mean.txt',[cf' mean(ldiff_mono,2) mean(ldiff_wfs14,2) ...
+%    mean(ldiff_wfs28,2) mean(ldiff_wfs56,2)],'# cf mono wfs14 wfs28 wfs56');
+%end
 
-gp_save('pinta_recordings_mean.txt',[cf' mean(ldiff_mono,2) mean(ldiff_wfs14,2) ...
-    mean(ldiff_wfs28,2) mean(ldiff_wfs56,2)],'# cf mono wfs14 wfs28 wfs56');
+function [l,cfreq] = magnitude(sig,fs)
+%MAGNITUDE calculates the magnitude in ERB bands
+%
+%   Input parameters
+%       sig - signal (the first channel is used for loudness calculation)
+%       fs  - sampling rate
+%
+%   Ouput parameters
+%       l     - magnitude
+%       cfreq - corresponding frequency bands
+%
+%   MAGNITUDE(sig,fs) calculates the magnitude in dB for the given signal in every
+%   frequency band.
+[amp,cfreq] = auditoryfilterbank(sig(:,1),fs,'fhigh',20000,'basef',1000);
+%l = db(rms(amp)));
+l = 20*log10(sqrt(mean(amp.^2)));
