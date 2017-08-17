@@ -1,14 +1,27 @@
-#! /usr/bin/gnuplot
+#!/usr/bin/gnuplot
+#
+# FIGURE 5.15: Direction, amplitude and time of appearance of wave fronts for
+# the 4 m loudspeaker array (left) and the 10 m array (right). The results are
+# shown for different angles phi at a radius of 1 m and 4 m, respectively. The
+# arrows are pointing towards the direction from which the wave fronts arrive.
+# The time of appearance is given by the starting point of the arrow. The length
+# and color of the arrow is proportional to the amplitude of the wave front in
+# dB. The dark blue arrows indicate the desired wave fronts.
+#
+# AUTHOR:   Hagen Wierstorf
+# SOFTWARE: gnuplot 5.0 patchlevel 3
+
 reset
 set macros
-set loadpath '../../gnuplot'
+set loadpath '../../gnuplot' 'data'
 
-set terminal epslatex size 10cm,6cm color colortext
-set output 'fs_directions.tex'
-
+load 'latex.cfg'
 load 'border.cfg'
 load 'blues.pal'
 set style line 10 lc rgb '#000000' lt 1 lw 2
+
+set terminal epslatex size 11.4cm,6cm color colortext @small
+set output 'fig5_15.tex'
 
 # Set the ratio in order to get the right aspect ratio for the arrows in the
 # plot
@@ -19,7 +32,7 @@ set cbrange [40:110]
 
 set multiplot layout 1,2 rowsfirst
 
-set lmargin 4
+set lmargin 7
 set rmargin 0
 # --- Plot 1: L = 4m ---
 xmin=-0.5; xmax=2.5
@@ -73,7 +86,7 @@ plot 'direction_L4_xs0_ys1_X0.0_Y2.0_dB.txt' i 0 every 2::3 u (0):2:($3*sc):($4*
 
 # --- Plot 2: L = 10m ---
 set lmargin 2
-set rmargin 2
+set rmargin 5
 load 'xborder.cfg'
 unset ytics
 set label 1 '\ft $R = 4$\,m' at graph 0.03,0.2
@@ -86,5 +99,7 @@ plot 'direction_L10_xs0_ys1_X0.0_Y5.0_dB.txt' i 0 every 2::3 u (0):2:($3*sc):($4
      ''                                       i 1            u (2):2:($3*sc):($4*sc*r)   with vectors as 2
 
 unset multiplot
+
+call 'plot.plt' 'fig5_15'
 
 # vim: set textwidth=300:
