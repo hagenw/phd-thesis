@@ -1,29 +1,21 @@
 ![Fig 5.4](fig5_04.png)
 
-**Figure 5.4**: Average localization
-results for all four experiments. The
-black symbols indicate loudspeakers,
-the grey ones the synthesized source.
-At every listening position, an arrow is
-pointing into the direction from which
-the listeners perceived the
-corresponding auditory event. The color of the
-arrow displays the absolute localization
-error, which is also summarized as an
-average beside the arrows for every row
-of positions. The average confidence
-interval for all localization results is 2.3°.
-Listening conditions which resulted in
-listeners saying that they perceived two
-sources in Exp. 4 are highlighted with a
-small 2 written below the position.
+**Figure 5.4**: Average localization results for all four experiments. The black
+symbols indicate loudspeakers, the grey ones the synthesized source. At every
+listening position, an arrow is pointing into the direction from which the
+listeners perceived the corresponding auditory event. The color of the arrow
+displays the absolute localization error, which is also summarized as an average
+beside the arrows for every row of positions. The average confidence interval
+for all localization results is 2.3°.  Listening conditions which resulted in
+listeners saying that they perceived two sources in Exp. 4 are highlighted with
+a small 2 written below the position.
 
 ## Steps for reproduction
 
 In order to reproduce the figure from the mean data that is stored in this
 directory run in Bash:
 ```Bash
-$ gnuplot sfs_localization.gnu
+$ gnuplot fig5_04.plt
 ```
 
 The data of the single listeners for the four different experiments presented
@@ -53,4 +45,8 @@ for two perceived directions you have to do it manually.
 
 ## Published data
 
-The binaural room scanning (BRS) files used together with the SoundScape Renderer in the listening experiment are available at [doi:10.5281/zenodo.55427](http://dx.doi.org/10.5281/zenodo.55427). The results of the listening experiment are also available at [doi:10.5281/zenodo.55439](http://dx.doi.org/10.5281/zenodo.55439).
+The binaural room scanning (BRS) files used together with the SoundScape
+Renderer in the listening experiment are available at
+[doi:10.5281/zenodo.55427](http://dx.doi.org/10.5281/zenodo.55427). The results
+of the listening experiment are also available at
+[doi:10.5281/zenodo.55439](http://dx.doi.org/10.5281/zenodo.55439).
