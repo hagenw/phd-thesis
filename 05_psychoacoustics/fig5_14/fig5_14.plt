@@ -1,29 +1,40 @@
 #!/usr/bin/gnuplot
-# Generate a biplot for subject 09 (castanets) and a biplot for subject 21
-# (speech)
-# PCA has been calculated by Ina with SPSS (see mail from 19.05.2010)
+#
+# FIGURE 5.14: Principal component analysis for castanets (left) and speech
+# (right) for one single subject. The blue, red and black points indicate the
+# position of the conditions given in the two-dimensional space determined by
+# the two given components for each stimulus type. The gray lines show the
+# arrangement of the attribute pairs in these two dimensions.
+#
+# Participant 09 (castanets) and participant 21 (speech) have been used.
+# The PCA was calculated by Ina Wechsung with SPSS
+#
+# AUTHOR:   Hagen Wierstorf
+# SOFTWARE: gnuplot 5.0 patchlevel 3
+
 reset
 set macros
-set loadpath '../../gnuplot'
+set loadpath '../../gnuplot' 'data'
 
-set terminal epslatex size 15cm,8cm color colortext
-set output 'pca.tex'
-
+load 'latex.cfg'
 load 'border.cfg'
 load 'moreland.pal'
 
+set terminal epslatex size 15cm,8cm color colortext @small
+set output 'fig5_14.tex'
+
 # Styling
-set linetype 1 lt 1 lc rgb '#3b4cc0' #
-set linetype 2 lt 1 lc rgb '#688aef' #
-set linetype 3 lt 1 lc rgb '#99baff' #
-set linetype 4 lt 1 lc rgb '#c9d8ef' #
-set linetype 5 lt 1 lc rgb '#edd1c2' #
-set linetype 6 lt 1 lc rgb '#f7a789' #
-set linetype 7 lt 1 lc rgb '#e36a53' #
-set linetype 8 lt 1 lc rgb '#b40426' #
-set linetype 11  lc rgb '#a6a6a6' pt 65 lt 1 lw 1
-set linetype 12 lc rgb '#000000' pt 7 lt 1 lw 2 # black
-set linetype 13 lc rgb '#d6d7d9' lt 4 lw 1 # lightgrey
+set linetype  1 lc rgb '#3b4cc0' #
+set linetype  2 lc rgb '#688aef' #
+set linetype  3 lc rgb '#99baff' #
+set linetype  4 lc rgb '#c9d8ef' #
+set linetype  5 lc rgb '#edd1c2' #
+set linetype  6 lc rgb '#f7a789' #
+set linetype  7 lc rgb '#e36a53' #
+set linetype  8 lc rgb '#b40426' #
+set linetype 11 lc rgb '#a6a6a6' pt 65 lw 1
+set linetype 12 lc rgb '#000000' pt 7 lw 2 # black
+set linetype 13 lc rgb '#d6d7d9' dt 3 lw 1 # lightgrey
 set linetype 12 lc rgb '#000000'
 
 set size ratio -1
@@ -131,3 +142,5 @@ plot 'pca_s21_attr.txt' u (-$2):(-$3):(2*$2):(2*$3) w vectors nohead ls 11,\
      'pca_s21_stim.txt' u 2:3:4 w p pt 7 lc variable
 
 unset multiplot
+
+call 'plot.plt' 'fig5_14'
