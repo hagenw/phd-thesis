@@ -1,7 +1,6 @@
 clear all
 addpath('../../matlab');
 
-
 % SFS configuration
 conf.debug = 0;
 conf.c = 343;
@@ -27,9 +26,8 @@ conf.ir.useoriglength = false;
 conf.ir.useinterpolation = true;
 conf.ir.usehcomp = true;
 conf.ir.hcompfile = 'QU_KEMAR_AKGK601_hcomp.wav';
-conf.speechfile = 'speech.wav';
+conf.speechfile = 'data/speech.wav';
 conf.plot.useplot = false;
-
 
 irs = read_irs('QU_KEMAR_anechoic_3m.mat',conf);
 
@@ -44,13 +42,13 @@ ir = ir(2000:6000,:);
 % calculate the spectrum
 [a,p,f] = easyfft(ir(:,1),conf);
 % save time signal and spectrum
-gp_save('wfs_point_source.txt',norm_signal(ir(:,1)),'magnitude');
-gp_save('wfs_point_source_time_reversed.txt',norm_signal(ir(end:-1:1,1)),'magnitude');
-gp_save('wfs_point_source_spectrum.txt',[f 20*log10(abs(a))+90],'F/Hz magnitude');
+gp_save('data/wfs_point_source.txt',norm_signal(ir(:,1)),'magnitude');
+gp_save('data/wfs_point_source_time_reversed.txt',norm_signal(ir(end:-1:1,1)),'magnitude');
+gp_save('data/wfs_point_source_spectrum.txt',[f 20*log10(abs(a))+90],'F/Hz magnitude');
 % generate audio files
 sig1 = auralize_ir(ir,'speech',1,conf);
 sig2 = auralize_ir(ir(end:-1:1,:),'speech',1,conf);
-wavwrite(ir,44100,16,'ir_wfs_point_source.wav');
-wavwrite(ir(end:-1:1,:),44100,16,'ir_wfs_point_source_time_reversed.wav');
-wavwrite(sig1,44100,16,'wfs_point_source.wav');
-wavwrite(sig2,44100,16,'wfs_point_source_time_reversed.wav');
+wavwrite(ir,44100,16,'data/ir_wfs_point_source.wav');
+wavwrite(ir(end:-1:1,:),44100,16,'data/ir_wfs_point_source_time_reversed.wav');
+wavwrite(sig1,44100,16,'data/wfs_point_source.wav');
+wavwrite(sig2,44100,16,'data/wfs_point_source_time_reversed.wav');
