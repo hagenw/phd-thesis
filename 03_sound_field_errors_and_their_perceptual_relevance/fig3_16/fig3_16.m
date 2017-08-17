@@ -1,7 +1,8 @@
 % create sound field simulations for a linear array and WFS with and without
 % tapering window to show the edge waves
 clear all;
-
+addpath('../../matlab');
+create_dir('data');
 
 %% ===== Configuration ===================================================
 X = [0 0.75 0]; % / m
@@ -10,7 +11,6 @@ Z = [0 0 0]; % / m
 t = (1:500)'; % / samples
 xs = [0 0.5 0 0 -1 0];
 src = 'fs';
-
 
 %% ===== Toolbox settings ================================================
 conf.debug = false;
@@ -38,13 +38,11 @@ conf.usetapwin = false;
 conf.tapwinlen = 0.3;
 conf.showprogress = false;
 
-
 %% ===== Secondary Sources ===============================================
 conf.secondary_sources.size = 3;
 conf.secondary_sources.geometry = 'circle';
 conf.secondary_sources.center = [0 0 0];
 conf.secondary_sources.x0 = [];
-
 
 %% ===== Time signal ======================================================
 % get time signal to visualize driving signals
@@ -66,7 +64,7 @@ for jj=1:length(X)
         % filter
         p(ii) = sound_field_imp(X(jj),Y(jj),Z(jj),x0,'ps',d,t(ii)+64,conf);
     end
-    gp_save(sprintf('wfs_X%.2f_Y%.2f.txt',X(jj),Y(jj)),[t/conf.fs p]);
+    gp_save(sprintf('data/wfs_X%.2f_Y%.2f.txt',X(jj),Y(jj)),[t/conf.fs p]);
 end
 
 %% ===== Sampled swecondary sources ======================================
@@ -85,5 +83,6 @@ for jj=1:length(X)
         % filter
         p(ii) = sound_field_imp(X(jj),Y(jj),Z(jj),x0,'ps',d,t(ii)+64,conf);
     end
-    gp_save(sprintf('wfs_X%.2f_Y%.2f_nls64.txt',X(jj),Y(jj)),[t/conf.fs p]);
+    gp_save(sprintf('data/wfs_X%.2f_Y%.2f_nls64.txt',X(jj),Y(jj)), ...
+            [t/conf.fs p]);
 end
