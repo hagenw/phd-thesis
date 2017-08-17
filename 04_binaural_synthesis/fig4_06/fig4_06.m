@@ -2,8 +2,12 @@
 % a single loudspeaker (in the presence of other speakers) or if you really need
 % all other speakers
 
+function fig4_06()
+
+addpath('../../matlab');
+create_dir('data');
+
 %% ===== Configuration ===================================================
-clear all;
 head_orientation = 0; % 0deg means look directly towards the speaker
 sig_noise = noise(441000,1,'white');
 fs = 44100;
@@ -69,7 +73,6 @@ array_right13 = { ...
     'QU_KEMAR_array_right_ls13_src13_xs+2.550_ys+2.000.mat', ...
     };
 
-
 %% === comparing single speakers ===
 irs_single = read_irs(array_center13{7},conf);
 [ldiff_c13,cf] = ...
@@ -79,7 +82,7 @@ irs_single = read_irs(array_center13{7},conf);
 [ldiff_r13,cf] = ...
     magnitude_diff_single(array_right13,irs_single,13,head_orientation,fs,sig_noise,conf);
 % Save results
-gp_save('array_directivity.txt',[cf'...
+gp_save('data/array_directivity.txt',[cf'...
     ldiff_c13(:,7), ...
     (ldiff_c13(:,6)+ldiff_c13(:,8))/2, ...
     (ldiff_c13(:,5)+ldiff_c13(:,9))/2, ...
@@ -99,3 +102,45 @@ gp_save('array_directivity.txt',[cf'...
     (ldiff_l13(:,2)+ldiff_r13(:,12))/2, ...
     (ldiff_l13(:,1)+ldiff_r13(:,13))/2, ...
     ],'cfreq delta_magnitude_loudsepaker_distance1 delta_magnitude_loudsepaker_distance2 ...');
+
+end
+
+%% ===== Subfunctions ====================================================
+function [ldiff,cf] = magnitude_diff_single(array,irs_single,nls,head_orientation,fs,sig_noise,conf)
+    %% Magnitude deviation function
+    for ii = 1:nls
+        % real array
+        irs = read_irs(array{ii},conf);
+        ir = ir_point_source([0 0 0],-pi/2, ...
+            irs.source_position'-irs.head_position',irs,conf);
+        % get the real amplitude
+        sig_real = auralize_ir(ir,sig_noise,0,conf);
+        % single loudspeaker array
+        ir = ir_point_source([0 0 0],-pi/2, ...
+            irs.source_position'-irs.head_position',irs_single,conf);
+        sig_single = auralize_ir(ir,sig_noise,0,conf);
+        [l_real,cf] = magnitude_erb(sig_real,fs);
+        [l_single,cf] = magnitude_erb(sig_single,fs);
+        ldiff(:,ii) = l_real-l_single;
+    end
+    % scale to same level at 1000 Hz due to some deviations during measurement
+    % between different positions
+    ldiff = bsxfun(@minus,ldiff,ldiff(13,:));
+end
+
+function [l,cfreq] = magnitude_erb(sig,fs)
+    %MAGNITUDE_ERB calculates magnitude in dB in ERB bands
+    %
+    %   Input parameters
+    %       sig - signal (the first channel is used for loudness calculation)
+    %       fs  - sampling rate
+    %
+    %   Ouput parameters
+    %       l     - magnitude / dB
+    %       cfreq - corresponding frequency bands
+    %
+    %   MAGNITUDE_ERB(sig,fs) calculates the magnitude in dB for the given signal in every
+    %   frequency band.
+    [amp,cfreq] = auditoryfilterbank(sig(:,1),fs,'fhigh',20000,'basef',1000);
+    l = db(mean(abs(amp)));
+end

@@ -15,24 +15,19 @@
 #   For every added loudspeaker the global variable object_number is counted one
 #   up and is accessable in your gnuplot code.
 #
-#   see also: gp_draw_loudspeakers, gp_set_head
-
-# AUTHOR: Hagen Wierstorf
-# $LastChangedDate: 2012-02-14 12:06:58 +0100 (Tue, 14 Feb 2012) $
-# $LastChangedRevision: 634 $
-# $LastChangedBy: wierstorf.hagen $
-
+# AUTHOR:   Hagen Wierstorf
+# SOFTWARE: gnuplot 5.0 patchlevel 3
 
 # Checking if we have enough input parameters
-if ('$#'!=6) print 'gp_set_loudspeakers needs 5 input parameters'; exit
+if (ARGC!=6) print 'gp_set_loudspeakers needs 5 input parameters'; exit
 
 # Getting the input parameters
-x0 = $0
-y0 = $1
-p = $2
-activity = $3
-color = "$4"
-lssize = $5
+x0 = ARG1
+y0 = ARG2
+p = ARG3
+activity = ARG4
+color = ARG5
+lssize = ARG6
 
 # Initialize an object number
 if (!exists("object_number")) object_number = 1;
@@ -52,5 +47,5 @@ set object object_number polygon from \
 -a/2*cos(p)+a/2*sin(p)+x0, -a/2*sin(p)-a/2*cos(p)+y0  to \
 -a*cos(p)+a/2*sin(p)+x0,   -a*sin(p)-a/2*cos(p)+y0
 # Set the color etc.
-set object object_number fc rgb color fillstyle solid 0.5*activity lw 1 front
+set object object_number fc rgb color fs solid 0.5*activity border lc rgb color lw 1 front
 object_number = object_number+1
