@@ -1,24 +1,28 @@
 #!/usr/bin/gnuplot
 #
-# Results of a localization test for real and simulated loudspeakers
+# FIGURE 4.4: Difference between the direction of the auditory event and the
+# sound event for loudspeakers and the binaural simulation of the loudspeakers.
+# Average over all listeners together with the 95% confidence interval is
+# shown.
 #
-# AUTHOR: Hagen Wierstorf
+# AUTHOR:   Hagen Wierstorf
+# SOFTWARE: gnuplot 5.0 patchlevel 3
 
 reset
 set macros
-set loadpath '../../gnuplot'
+set loadpath '../../gnuplot' 'data'
 
-set terminal epslatex size 10cm,6cm color colortext
-set output 'binaural_synthesis_localization.tex'
-
+load 'latex.cfg'
 load 'border.cfg'
 load 'grid.cfg'
 set grid mytics ytics xtics
 load 'paired.pal'
 
+set terminal epslatex size 10cm,5.5cm color colortext @small
+set output 'fig4_04.tex'
+
 unset key
 
-#set xrange [-0.125:1.825]
 set yrange [-7.4:7.4]
 set xtics 15 offset 0,0.3
 set ytics 6 offset 0.5,0
@@ -28,23 +32,23 @@ set ylabel ' ' offset 1,0
 
 set datafile separator ','
 
+set bmargin 2.9
+set tmargin 0
 set multiplot
-set size 1,0.45
+set size 1,0.553
+set origin 0,0.406
 load 'yborder.cfg'
 set format y '$%g\degree$'
-set tmargin 2
-set bmargin 0
 set label 1 '\ft loudspeaker' at 43,4.1 right front
-set origin 0,0.5
 plot 'mean_signed.csv' u 1:6:7 w yerrorbars ls 2 lw 1 pt 7 ps 1.3
+set origin 0,0
 unset title
 load 'xyborder.cfg'
-set bmargin 2
-set tmargin 0
 set format '$%g\degree$'
 set xlabel '$\phi_\text{sound event}$' offset 0,0.7
 set ylabel '$\phi_\text{auditory event}-\phi_\text{sound event}$' offset 1,2.6
 set label 1 '\ft binaural synthesis'
-set origin 0,0
 plot 'mean_signed.csv' u 1:4:5 w yerrorbars ls 2 lw 1 pt 9 ps 1.5
 unset multiplot
+
+call 'plot.plt' 'fig4_04'
