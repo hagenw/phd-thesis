@@ -1,19 +1,23 @@
 #!/usr/bin/gnuplot
 #
-# Plot the setup for the WFS linear loudspeaker array localization experiment
+# FIGURE 5.16: Setup for Experiment 2. The position of the synthesized focused
+# source is indicated by the grey point. The position of the listener by black
+# crosses and secondary sources by black dots.
 #
-# AUTHOR: Hagen Wierstorf
+# AUTHOR:   Hagen Wierstorf
+# SOFTWARE: gnuplot 5.0 patchlevel 3
 
 reset
 set macros
-set loadpath '../../gnuplot'
+set loadpath '../../gnuplot' 'data'
 
-set terminal epslatex size 5cm,7.5cm color colortext
-set output 'fs_exp2_setup.tex'
-
+load 'latex.cfg'
 load 'localization.cfg'
 load 'array.cfg'
 load 'noborder.cfg'
+
+set terminal epslatex size 5cm,7.5cm color colortext @footnotesize
+set output 'fig5_16.tex'
 
 set style line 1 lc rgb 'black' pt 2 ps 0.75 lw 1
 
@@ -70,3 +74,5 @@ set label '\tiny $1$\,m' at -2.5,1.4 center front tc ls 101
 plot 1/0
 
 unset multiplot
+
+call 'plot.plt' 'fig5_16'
