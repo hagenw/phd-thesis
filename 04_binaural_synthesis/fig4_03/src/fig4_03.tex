@@ -1,0 +1,22 @@
+\documentclass[a4paper, oneside, nobib, notoc, justified]{tufte-book}
+
+% Load packages
+\usepackage{graphicx}
+\usepackage{tikz}
+\pgfrealjobname{fig}
+
+% Commands
+\newcommand{\scs}[0]{\scriptsize}
+
+\begin{document}
+    \beginpgfgraphicnamed{fig4_03}
+    \begin{tikzpicture}
+        \draw (-2.23,0)  node {\includegraphics[width=.45\columnwidth]{src/apparatus}};
+        \draw (3.2,0)    node {\includegraphics[width=.50\columnwidth]{src/procedure}};
+        \draw (3.6,1.9)  node {\scs visual mark};
+        \draw (5.27,1.9) node {\scs laser};
+        \draw (3.6,1.7) -- (3.74,0.92);
+        \draw (5.27,1.7) -- (5.41,0.92);
+    \end{tikzpicture}
+    \endpgfgraphicnamed
+\end{document}
