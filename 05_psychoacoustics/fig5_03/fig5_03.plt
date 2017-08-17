@@ -1,19 +1,23 @@
 #!/usr/bin/gnuplot
 #
-# Plot setup for the circular loudspeaker array and NFC-HOA localization experiment
+# Figure 5.3: Setup for Experiment 3. The position of the synthesized source is
+# indicated by the grey point. The position of the listener by black crosses
+# and secondary sources by black dots.
 #
-# AUTHOR: Hagen Wierstorf
+# AUTHOR:   Hagen Wierstorf
+# SOFTWARE: gnuplot 5.0 patchlevel 3
 
 reset
 set macros
-set loadpath '../../gnuplot'
+set loadpath '../../gnuplot' 'data'
 
-set terminal epslatex size 5cm,10cm color colortext
-set output 'hoa_circular_array.tex'
-
+load 'latex.cfg'
 load 'localization.cfg'
 load 'array.cfg'
 load 'noborder.cfg'
+
+set terminal epslatex size 5cm,10cm color colortext @footnotesize
+set output 'fig5_03.tex'
 
 set style line 1 lc rgb 'black' pt 2 ps 0.75 lw 1
 
@@ -100,3 +104,5 @@ plot 'array_nls14_circular.txt'         @array_active ps 0.5 w p,\
      set_plane_wave(0,2.5)              @plane_wave
 
 unset multiplot
+
+call 'plot.plt' 'fig5_03'
