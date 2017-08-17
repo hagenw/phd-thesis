@@ -1,24 +1,20 @@
 ![Fig 3.17](fig3_17.png)
 
-**Figure 3.17**: ITDs for a pink noise
-signal synthesized as a point source by
-NFC-HOA (2.45) and WFS (2.57) at three
-listening positions, with a head
-orientation of 90°. Parameters: x_s =
-(0,2.5,0), x_ref = (0,0,0), circular
-secondary source distribution with a
-diameter of 3 m.
+**Figure 3.17**: ITDs for a pink noise signal synthesized as a point source by
+NFC-HOA (2.45) and WFS (2.57) at three listening positions, with a head
+orientation of 90°. Parameters: x_s = (0,2.5,0), x_ref = (0,0,0), circular
+secondary source distribution with a diameter of 3 m.
 
 ## Steps for reproduction
 
 Matlab/Octave:
 ```Matlab
->> sfs_itd
+>> fig3_17
 ```
 
 Bash:
 ```Bash
-$ gnuplot sfs_itd.gnu
+$ gnuplot fig3_17.plt
 ```
 
 ## Problem solving

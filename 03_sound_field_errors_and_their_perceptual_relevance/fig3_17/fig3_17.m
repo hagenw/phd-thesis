@@ -1,7 +1,7 @@
 % calculate ITD values for different SFS setups
 clear all
 addpath('../../matlab');
-
+create_dir('data');
 
 %% ===== Configuration ===================================================
 X = [0 0.5 1.0]; % / m
@@ -10,7 +10,6 @@ Z = 0; % / m
 phi = pi/2;
 xs = [0 2.5 0];
 src = 'ps';
-
 
 %% ===== Toolbox settings ================================================
 conf.xref = [0 0 0]; % / m
@@ -36,13 +35,11 @@ conf.ir.usehcomp = false;
 conf.ir.hcompfile = '';
 conf.ir.useoriglength = false;
 
-
 %% ===== Secondary Sources ===============================================
 conf.secondary_sources.size = 3; % / m
 conf.secondary_sources.center = [0 0 0]; % / m
 conf.secondary_sources.geometry = 'circle';
 conf.secondary_sources.x0 = [];
-
 
 %% ===== Main ============================================================
 hrtf = read_irs('QU_KEMAR_anechoic_3m.mat',conf);
@@ -64,7 +61,7 @@ conf.wfs.hprefhigh = 20000;
 for ii=1:length(X)
     ir = ir_wfs([X(ii) Y(ii) Z],phi,xs,src,hrtf,conf);
     [~,~,itd,~,fc] = wierstorf2013estimateazimuth(auralize_ir(ir,noise_sig,1,conf),lookup_table,'include_outlier');
-    gp_save(sprintf('wfs_X%1.2f_Y%1.2f.txt',X(ii),Y(ii)),[fc' itd']);
+    gp_save(sprintf('data/wfs_X%1.2f_Y%1.2f.txt',X(ii),Y(ii)),[fc' itd']);
 end
 
 % ----- with aliasing ----------------------------------------------------
@@ -74,20 +71,19 @@ conf.nfchoa.order = 220;
 for ii=1:length(X)
     ir = ir_nfchoa([X(ii) Y(ii) Z],phi,xs,src,hrtf,conf);
     [~,~,itd,~,fc] = wierstorf2013estimateazimuth(auralize_ir(ir,noise_sig,1,conf),lookup_table,'include_outlier');
-    gp_save(sprintf('nfchoa_X%1.2f_Y%1.2f_nls22.txt',X(ii),Y(ii)),[fc' itd']);
+    gp_save(sprintf('data/nfchoa_X%1.2f_Y%1.2f_nls22.txt',X(ii),Y(ii)),[fc' itd']);
 end
 % --- band limited NFCHOA
 conf.nfchoa.order = [];
 for ii=1:length(X)
     ir = ir_nfchoa([X(ii) Y(ii) Z],phi,xs,src,hrtf,conf);
     [~,~,itd,~,fc] = wierstorf2013estimateazimuth(auralize_ir(ir,noise_sig,1,conf),lookup_table,'include_outlier');
-    gp_save(sprintf('nfchoa_X%1.2f_Y%1.2f_nls22_band_limited.txt',X(ii),Y(ii)),[fc' itd']);
+    gp_save(sprintf('data/nfchoa_X%1.2f_Y%1.2f_nls22_band_limited.txt',X(ii),Y(ii)),[fc' itd']);
 end 
 % --- WFS
 conf.wfs.hprefhigh = 1500;
 for ii=1:length(X)
     ir = ir_wfs([X(ii) Y(ii) Z],phi,xs,src,hrtf,conf);
     [~,~,itd,~,fc] = wierstorf2013estimateazimuth(auralize_ir(ir,noise_sig,1,conf),lookup_table,'include_outlier');
-    gp_save(sprintf('wfs_X%1.2f_Y%1.2f_nls22.txt',X(ii),Y(ii)),[fc' itd']);
+    gp_save(sprintf('data/wfs_X%1.2f_Y%1.2f_nls22.txt',X(ii),Y(ii)),[fc' itd']);
 end
-
