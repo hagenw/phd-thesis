@@ -1,19 +1,23 @@
 #!/usr/bin/gnuplot
 #
-# Plot the setup for the WFS linear loudspeaker array localization experiment
+# FIGURE 5.1: Setup for Experiment 1. The position of the synthesized source is
+# indicated by the grey point. The position of the listener by black crosses
+# and secondary sources by black dots.
 #
-# AUTHOR: Hagen Wierstorf
+# AUTHOR:   Hagen Wierstorf
+# SOFTWARE: gnuplot 5.0 patchlevel 3
 
 reset
 set macros
-set loadpath '../../gnuplot'
+set loadpath '../../gnuplot' 'data'
 
-set terminal epslatex size 5cm,2.5cm color colortext
-set output 'wfs_linear_array.tex'
-
+load 'latex.cfg'
 load 'localization.cfg'
 load 'array.cfg'
 load 'noborder.cfg'
+
+set terminal epslatex size 5cm,2.5cm color colortext @footnotesize
+set output 'fig5_01.tex'
 
 set style line 1 lc rgb 'black' pt 2 ps 0.75 lw 1
 
@@ -36,14 +40,12 @@ set multiplot layout 1,3
 set xrange [-2.1:2.1]
 set yrange [-2.3:1.1]
 # WFS point source, 15 secondary sources
-#set label 1 '\ft WFS' at screen 0, graph 0.5 right front
 plot 'array_nls15_linear.txt'           @array_active ps 0.5 w p,\
      'listener_positions.txt'           w p ls 1, \
      set_point_source(0,1)              @point_source
 
 # --- 2 ---
 # WFS point source, 8 secondary sources
-#set label 1 ''
 plot 'array_nls8_linear.txt'            @array_active ps 0.5 w p,\
      'listener_positions.txt'           w p ls 1, \
      set_point_source(0,1)              @point_source
@@ -57,3 +59,5 @@ plot 'array_nls3_linear.txt'            @array_active ps 0.5 w p,\
      set_point_source(0,1)              @point_source
 
 unset multiplot
+
+call 'plot.plt' 'fig5_01'
