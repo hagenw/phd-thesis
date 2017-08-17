@@ -1,19 +1,21 @@
 #!/usr/bin/gnuplot
 #
-# Plot setup for the circular loudspeaker array and WFS coloration experiment
+# Figure 5.7: Experimental setup for coloration experiment.
 #
-# AUTHOR: Hagen Wierstorf
+# AUTHOR:   Hagen Wierstorf
+# SOFTWARE: gnuplot 5.0 patchlevel 3
 
 reset
 set macros
-set loadpath '../../gnuplot'
+set loadpath '../../gnuplot' 'data'
 
-set terminal epslatex size 5cm,5.5cm color colortext
-set output 'wfs_coloration_setup.tex'
-
+load 'latex.cfg'
 load 'localization.cfg'
 load 'array.cfg'
 load 'noborder.cfg'
+
+set terminal epslatex size 5cm,5.5cm color colortext @footnotesize
+set output 'fig5_07.tex'
 
 set style line 1 lc rgb 'black' pt 2 ps 0.75 lw 1
 
@@ -64,3 +66,5 @@ set label '\ft \ldots' at -1.75,5 center front
 plot 1/0
 
 unset multiplot
+
+call 'plot.plt' 'fig5_07'
