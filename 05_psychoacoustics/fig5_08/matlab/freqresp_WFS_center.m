@@ -56,5 +56,5 @@ for i=2:10
     ffts(:,i)=a;
 end
 
-gp_save('../coloration_wfs_freq_response_center.txt',f',ffts);
+gp_save('../data/coloration_wfs_freq_response_center.txt',f',ffts);
 SFS_stop;
