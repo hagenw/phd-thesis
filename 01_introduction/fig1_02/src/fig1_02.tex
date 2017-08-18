@@ -1,0 +1,36 @@
+\documentclass[a4paper, oneside, nobib, notoc, justified]{tufte-book}
+
+% Load packages
+\usepackage{graphicx,xcolor}
+\usepackage{tikz}
+\pgfrealjobname{fig}
+\usepackage{amsmath,amssymb}
+\usepackage{relsize}
+\usepackage[smaller]{acronym}
+
+% Colors
+\definecolor{paired1}{HTML}{A6CEE3}
+
+% Commands
+\newcommand{\ft}[0]{\footnotesize}
+\newcommand{\scs}[0]{\scriptsize}
+\newcommand{\sm}[0]{\small}
+
+% Acronyms
+\newacro{ILD}[ILD]{interaural level difference}
+\newacro{ITD}[ITD]{interaural time difference}
+
+\begin{document}
+    \beginpgfgraphicnamed{fig1_02}
+    \small
+    \begin{tikzpicture}
+        \draw (0,0)      node {\includegraphics[width=.8\columnwidth]{src/itd_ild_sketch}};
+        \draw (-2.5,2.5)   node {\acf{ITD}};
+        \draw (2.5,2.5)    node {\acf{ILD}};
+        \draw (-2.5,1.9)   node {\ft $f<1.4$\,kHz};
+        \draw (2.5,1.9)    node {\ft $f>1.4$\,kHz};
+        \draw (-2.8,-0.7)  node [rotate=42] {\large\color{paired1}$\Delta t$};
+        \draw (2.2,-1.7)   node {\large\color{paired1}$\Delta L$};
+    \end{tikzpicture} 
+    \endpgfgraphicnamed
+\end{document}
