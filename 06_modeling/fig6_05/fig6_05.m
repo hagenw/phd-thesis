@@ -1,5 +1,7 @@
 clear all;
 addpath('../../matlab');
+addpath('./src');
+create_dir('data');
 % load common SFS Toolbox settings
 sfs_configuration;
 % load HRTFs
@@ -36,5 +38,5 @@ for nn=1:length(nls)
     end
     [phi,phi_std] = estimate_direction(ir,lookup,5,conf);
     phi_error = abs(phi_real-phi);
-    gp_save(sprintf('wfs_linear_nls%i.txt',nls(nn)),[x y phi' phi_error' phi_std'],'x/m y/m phi/deg phi_error/deg phi_std/deg');
+    gp_save(sprintf('data/wfs_linear_nls%i.txt',nls(nn)),[x y phi' phi_error' phi_std'],'x/m y/m phi/deg phi_error/deg phi_std/deg');
 end
