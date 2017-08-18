@@ -1,5 +1,8 @@
 clear all;
 addpath('../../matlab');
+addpath('./src');
+create_dir('data');
+
 % load common SFS Toolbox settings
 sfs_configuration;
 % load HRTFs
@@ -44,7 +47,7 @@ for ii=1:length(x)
 end
 [phi,phi_std] = estimate_direction(ir,lookup,model_repetitions,conf);
 phi_error = abs(phi_real-phi);
-gp_save_matrix('stereo.dat',X,Y,reshape(phi_error,resolution,resolution));
+gp_save_matrix('data/stereo.dat',X,Y,reshape(phi_error,resolution,resolution));
 
 
 % === WFS ===
@@ -63,7 +66,7 @@ for nn=1:length(nls)
         end
     end
     phi_error = abs(phi_real-phi);
-    gp_save_matrix(sprintf('wfs_circular_nls%i.dat',nls(nn)),X,Y,reshape(phi_error,resolution,resolution));
+    gp_save_matrix(sprintf('data/wfs_circular_nls%i.dat',nls(nn)),X,Y,reshape(phi_error,resolution,resolution));
 end
 
 % === band-limited NFC-HOA ===
@@ -83,7 +86,7 @@ for nn=1:length(nls)
         end
     end
     phi_error = abs(phi_real-phi);
-    gp_save_matrix(sprintf('nfchoa_band-limited_nls%i.dat',nls(nn)),X,Y,reshape(phi_error,resolution,resolution));
+    gp_save_matrix(sprintf('data/nfchoa_band-limited_nls%i.dat',nls(nn)),X,Y,reshape(phi_error,resolution,resolution));
 end
 
 % === NFC-HOA ===
@@ -103,6 +106,6 @@ for ii=1:length(x)
     end
 end
 phi_error = abs(phi_real-phi);
-gp_save_matrix('nfchoa_order28_nls14.dat',X,Y,reshape(phi_error,resolution,resolution));
+gp_save_matrix('data/nfchoa_order28_nls14.dat',X,Y,reshape(phi_error,resolution,resolution));
 
 % vim: set textwidth=200:
