@@ -1,26 +1,27 @@
 #!/usr/bin/gnuplot
 #
-# <+DESCRIPTION+>
+# FIGURE 1.5: Coordinate system used in this thesis. The vector x can also be
+# described by its length, its azimuth angle phi, and its elevation elevation.
 #
-# AUTHOR: Hagen Wierstorf
-# gnuplot 4.6 patchlevel 3
+# AUTHOR:   Hagen Wierstorf
+# SOFTWARE: gnuplot 5.0 patchlevel 3
 
 reset
 set macros
-set loadpath '../../gnuplot'
+set loadpath '../../gnuplot' 'data'
 
-set terminal epslatex size 8cm,5cm color colortext
-set output 'coordinate_system.tex'
-
+load 'latex.cfg'
 load 'border.cfg'
 set border 1+2+16
 load 'noborder.cfg'
 unset tics
-set view 37,11
 load 'paired.pal'
 
-unset key
+set terminal epslatex size 8cm,5cm color colortext @small
+set output 'fig1_05.tex'
 
+set view 37,11
+unset key
 
 set parametric
 #set samples 4000
@@ -72,3 +73,5 @@ fuz(u) = r*sin(u)
 
 splot fvx(v),fvy(v),fvz ls 1 lw 1,\
       fux(u),fuy(u),fuz(u) ls 1 lw 1
+
+call 'plot.plt' 'fig1_05'
