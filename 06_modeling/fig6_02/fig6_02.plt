@@ -1,24 +1,25 @@
 #!/usr/bin/gnuplot
 #
-# Plot a historgram of the localization results for a loudspeaker array with 14
-# loudspeakers and the listener placed at (-1,-0.75,0)m for WFS and NFC-HOA with
-# different order M.
+# FIGURE 6.2: Distributions of the auditory event's directions as predicted by
+# the binaural model for the listening position (-0.75, -0.75, 0) m and the
+# circular secondary source distribution with 14 sources. The results for a
+# synthesized point source for WFS and NFC-HOA up to different orders M are
+# shown.
 #
-# AUTHOR: Hagen Wierstorf
-# gnuplot 4.6 patchlevel 0
+# AUTHOR:   Hagen Wierstorf
+# SOFTWARE: gnuplot 5.0 patchlevel 3
 
 reset
-set loadpath '../../gnuplot'
+set loadpath '../../gnuplot' 'data'
 
-set terminal epslatex size 10cm,4.5cm color colortext
-set output 'localization_distribution.tex'
-
+load 'latex.cfg'
 load 'border.cfg'
 load 'grid.cfg'
 set grid xtics ytics mxtics
 load 'paired.pal'
-# plot the histogram in green
-#set style line 1 lc rgb 'green'
+
+set terminal epslatex size 10.3cm,4.5cm color colortext @small
+set output 'fig6_02.tex'
 
 unset key
 
@@ -43,17 +44,21 @@ set mxtics 2
 set lmargin 3
 set rmargin 0
 
-set multiplot layout 1,3
-set label 1 '\ft \ac{WFS}' at 96,47 right front
+set multiplot
+set size 0.325,1
+set origin 0.05,0
+set label 1 '\ft \acs{WFS}' at 96,47 right front
 plot 'wfs_ps_nls14_X-0.75_Y-0.75.txt' u (hist($1,width)):(1.0) smooth freq w boxes ls 1
+set origin 0.374,0
 set lmargin 1.5
 set rmargin 1.5
 load 'xborder.cfg'
 set format x '$%g\degree$'
-set label 1 '\ft \ac{NFC-HOA}'
+set label 1 '\ft \acs{NFC-HOA}'
 set label 2 '\ft $M=28$' at 96,41 right front
 set label 3 '\ft listener at $(-0.75,-0.75,0)$\,m' at 0,62 center front
 plot 'nfchoa_ps_nls14_order28_X-0.75_Y-0.75.txt' u (hist($1,width)):(1.0) smooth freq w boxes ls 1
+set origin 0.698,0
 set lmargin 0
 set rmargin 3
 set label 2 '\ft $M=7$'
@@ -65,3 +70,5 @@ set arrow from 70,10 to 42,6.4 nohead front ls 101
 plot 'nfchoa_ps_nls14_order7_X-0.75_Y-0.75.txt' i 0 u (hist($1,width)):(1.0) smooth freq w boxes ls 5,\
      ''                                         i 1 u (hist($1,width)):(1.0) smooth freq w boxes ls 1
 unset multiplot
+
+call 'plot.plt' 'fig6_02'
