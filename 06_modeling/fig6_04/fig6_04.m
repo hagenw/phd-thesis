@@ -1,5 +1,7 @@
 clear all;
 addpath('../../matlab');
+addpath('./src');
+create_dir('data');
 
 % load common SFS Toolbox settings
 sfs_configuration;
@@ -31,7 +33,7 @@ for nn=1:length(nls)
     binaural_map = calculate_binaural_map(sig(1:length(sig_noise),:),conf.fs,'dietz');
     [signal_strength,fc] = calculate_signal_strength(sig(1:length(sig_noise),:),conf.fs);
     % store data
-    filename = sprintf('wfs_nls%i_X%.2f_Y%.2f_%s.txt',conf.secondary_sources.number,X(1),X(2),src);
+    filename = sprintf('data/wfs_nls%i_X%.2f_Y%.2f_%s.txt',conf.secondary_sources.number,X(1),X(2),src);
     gp_save(filename,[binaural_map signal_strength]);
 end
 
@@ -51,7 +53,7 @@ for nn=1:length(nls)
     binaural_map = calculate_binaural_map(sig(1:length(sig_noise),:),conf.fs,'dietz');
     [signal_strength,fc] = calculate_signal_strength(sig(1:length(sig_noise),:),conf.fs);
     % store data
-    filename = sprintf('wfs_nls%i_X%.2f_Y%.2f_%s.txt',conf.secondary_sources.number,X(1),X(2),src);
+    filename = sprintf('data/wfs_nls%i_X%.2f_Y%.2f_%s.txt',conf.secondary_sources.number,X(1),X(2),src);
     gp_save(filename,[binaural_map signal_strength]);
 end
 
@@ -74,6 +76,6 @@ for nn=1:length(nls)
     binaural_map = calculate_binaural_map(sig(1:length(sig_noise),:),conf.fs,'dietz');
     [signal_strength,fc] = calculate_signal_strength(sig(1:length(sig_noise),:),conf.fs);
     % store data
-    filename = sprintf('nfchoa_nls%i_order%i_X%.2f_Y%.2f_%s.txt',conf.secondary_sources.number,conf.nfchoa.order,X(1),X(2),src);
+    filename = sprintf('data/nfchoa_nls%i_order%i_X%.2f_Y%.2f_%s.txt',conf.secondary_sources.number,conf.nfchoa.order,X(1),X(2),src);
     gp_save(filename,[binaural_map signal_strength]);
 end
