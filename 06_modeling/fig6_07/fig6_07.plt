@@ -1,7 +1,9 @@
 #!/usr/bin/gnuplot
 #
-# Plot localization model results for WFS, NFC-HOA and different loudspeaker
-# array setups
+# FIGURE 6.7: Model predictions of the perceived direction for a synthesized
+# point source in the audience area. All three secondary source distributions
+# were driven by NFC-HOA (2.50) with an order of 14. For both distributions to
+# the right the positions of the secondary sources were changed.
 #
 # Explanation of calculated values:
 # * the labels printed beside the position rows are the mean absolute
@@ -11,22 +13,23 @@
 #   averaged over all positions and loudspeaker setups; the ones were more than
 #   one arrow is printed for one position were excluded from the average
 #
-# AUTHOR: Hagen Wierstorf
+# AUTHOR:   Hagen Wierstorf
+# SOFTWARE: gnuplot 5.0 patchlevel 3
 
 reset
 set macros
-set loadpath '../../gnuplot'
+set loadpath '../../gnuplot' 'data'
 
-set terminal epslatex size 15cm,6.5cm color colortext
-set output 'nfchoa_model.tex'
-
+load 'latex.cfg'
 load 'localization.cfg'
 load 'array.cfg'
 load 'noborder.cfg'
 
+set terminal epslatex size 15cm,6.5cm color colortext @small
+set output 'fig6_07.tex'
+
 unset key
 set size ratio -1
-
 
 set cbrange [0:40]
 
@@ -37,8 +40,6 @@ set rmargin 1
 
 unset colorbox
 
-
-# === start plotting =====================================================
 set multiplot layout 1,3
 
 # --- 1 NFC-HOA ---
@@ -65,10 +66,11 @@ plot 'nfchoa_random_circle_nls28_order14.txt' @localization_arrow,\
 arrow_size = 3
 set xrange [-2:2]
 set yrange [-2:2.6]
-set label '\ft \ac{NFC-HOA}, $M=14$' at 1.55,-1.9 right front tc ls 101
+set label '\ft \acs{NFC-HOA}, $M=14$' at 1.55,-1.9 right front tc ls 101
 plot 'nfchoa_jitter_nls28_order14.txt'  @localization_arrow,\
      'array_nfchoa_jitter.txt'          @array_active w p,\
      set_point_source(0,2.5)            @point_source
 
-
 unset multiplot
+
+call 'plot.plt' 'fig6_07'
