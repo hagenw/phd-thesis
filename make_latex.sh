@@ -11,15 +11,14 @@ FOLDERS="01_introduction \
 # check if we have to add an extra latex run
 if ! [[ -f $FILE.aux ]]
 then
-    latex $FILE
+    pdflatex $FILE
 fi
 if ! [[ -f $FILE.bbl ]]
 then
     biber $FILE
 fi
 # run latex
-latex $FILE
-dvipdf $FILE
+pdflatex $FILE
 # apply metadata (this has to be done after the compilation of the PDF, because
 # the gnuplot figures overwrites the hyperref settings)
 mv $FILE.pdf ${FILE}_tmp.pdf

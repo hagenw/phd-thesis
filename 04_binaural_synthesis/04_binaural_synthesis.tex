@@ -1,18 +1,6 @@
 % --- Configuration ------------------------------------------------------
 % add shortcut for github url of this chapter
 \def \GITHUB {\GITHUBBASE/04_binaural_synthesis}
-% add the fig folders
-\graphicspath{%
-{\PATH/\CHAPFOUR/fig4_01/}%
-{\PATH/\CHAPFOUR/fig4_02/}%
-{\PATH/\CHAPFOUR/fig4_03/}%
-{\PATH/\CHAPFOUR/fig4_04/}%
-{\PATH/\CHAPFOUR/fig4_05/}%
-{\PATH/\CHAPFOUR/fig4_06/}%
-{\PATH/\CHAPFOUR/fig4_07/}%
-{\PATH/\CHAPFOUR/fig4_08/}%
-{\PATH/\CHAPFOUR/fig4_09/}%
-}
 
 
 % --- Document -----------------------------------------------------------
@@ -43,18 +31,7 @@ in the literature.}
 %
 \begin{figure}
     \centering
-    \small
-    \begin{tikzpicture}
-        \draw (0,0)       node {\includegraphics[width=.8\columnwidth]{dynamic_binaural_synthesis}};
-        \draw (-0.06,2.9) node {\ac{HRTF}};
-        \draw (-0.06,2.4) node {\scs\shortstack{for \\head orientation $\phi$}};
-        \draw (0,0.7)     node {\acs{SSR}};
-        \draw (0,0.1)     node {\scs\shortstack{convolution and \\ \ac{HRTF} switching}};
-        \draw (-3.2,0.7)  node {\ft head tracker};
-        \draw (-3.2,0.1)  node {\scs\shortstack{ head orientation $\phi$}};
-        \draw (3.2,0.4)   node {\ft\shortstack{dry \\ audio material}};
-        \draw (0,-4.5)    node {\ft simulated loudspeakers};
-    \end{tikzpicture}
+    \includegraphics{fig4_01/fig4_01}
     \caption{Functional principle of dynamic binaural synthesis. The listener is
     wearing headphones and a head tracker. The audio material is convolved with
     the \ac{HRTF} that incorporates all simulated loudspeakers for the
@@ -132,7 +109,7 @@ binaural synthesis to investigate different sound field synthesis issues are car
 \label{sec:head-related-transfer-function}
 
 \begin{marginfigure}
-    \includegraphics[width=.98\columnwidth]{kemar_rar}
+    \includegraphics[width=.98\columnwidth]{fig4_02/fig4_02}
     \label{fig:kemar}
     \caption{Measurements with the artificial head in the anechoic chamber.
     \reproduce{\GITHUB/fig4_02}}
@@ -267,14 +244,7 @@ To add such a visual pointer a small laser pointer was mounted onto the
 headphones -- compare Fig.\,\ref{fig:apparatus}.
 
 \begin{figure}[t]
-    \begin{tikzpicture}
-        \draw (-2.23,0)  node {\includegraphics[width=.45\columnwidth]{apparatus}};
-        \draw (3.2,0)    node {\includegraphics[width=.50\columnwidth]{procedure}};
-        \draw (3.6,1.9)  node {\scs visual mark};
-        \draw (5.27,1.9) node {\scs laser};
-        \draw (3.6,1.7) -- (3.74,0.92);
-        \draw (5.27,1.7) -- (5.41,0.92);
-    \end{tikzpicture}
+    \includegraphics{fig4_03/fig4_03}
     \caption{Sketch of the apparatus in the listening room (left) and a listener
     during the experiment (right). Only the loudspeakers marked in black were
     used in the experiment. Note that the room was dark during
@@ -421,9 +391,8 @@ calculated using these data.
 \label{sec:results_binaural_localization}
 %
 \begin{figure}
-    \small
     \centering
-    \input{fig4_04/binaural_synthesis_localization}
+    \includegraphics{fig4_04/fig4_04}
     \caption{Difference between the direction of the auditory event and the
     sound event for loudspeakers and the binaural simulation of the
     loudspeakers. Average over all listeners together with the $95\%$ confidence
@@ -543,7 +512,7 @@ of a linear loudspeaker array was performed in an anechoic chamber.
 \subsection{Method}
 %
 \begin{marginfigure}
-    \includegraphics[width=\columnwidth]{rar_kemar_array}
+    \includegraphics[width=\columnwidth]{fig4_05/fig4_05}
     \caption{\ac{HRTF} measurement of a loudspeaker array in the anechoic
     chamber of the \textsmaller{TU} Berlin.
     \reproduce{\GITHUB/fig4_05}}
@@ -578,9 +547,8 @@ building the root mean square value in every frequency channel.
 \subsection{Results and Discussion}
 %
 \begin{figure}
-    \small
     \centering
-    \input{fig4_06/array_directivity}
+    \includegraphics{fig4_06/fig4_06}
     \caption{Difference between the magnitude of the simulated and real
     loudspeaker array dependent on the center frequency of the auditory
     filter bank.
@@ -670,7 +638,7 @@ measurement of the \acp{HRTF} that are used for the binaural synthesis.
 \subsection{Method}
 %
 \begin{marginfigure}
-    \includegraphics[width=\columnwidth]{fabian}
+    \includegraphics[width=\columnwidth]{fig4_07/fig4_07}
     \caption{Recording of \acp{HRTF} with {\ft FABIAN} in room \emph{Pinta}. Note that this
     picture is from a recording session where {\ft FABIAN} was placed out of the center
     and did not wear headphones.
@@ -679,7 +647,7 @@ measurement of the \acp{HRTF} that are used for the binaural synthesis.
 \end{marginfigure}
 %
 \begin{marginfigure}
-    \includegraphics[width=\columnwidth]{pinta_kemar}
+    \includegraphics[width=\columnwidth]{fig4_08/fig4_08}
     \caption{Recording of the ear signals for binaural synthesis and real loudspeakers in
     room \emph{Pinta}.
     \reproduce{\GITHUB/fig4_08}}
@@ -729,9 +697,8 @@ recorded for $24$\,s for every condition and position.
 \subsection{Results and Discussion}
 %
 \begin{figure}
-    \small
     \centering
-    \input{fig4_09/pinta_recordings}
+    \includegraphics{fig4_09/fig4_09}
     \caption{Differences in magnitude between real loudspeaker setups and their binaural simulation.
     A single loudspeaker (mono) or a circular loudspeaker array driven by
     \ac{WFS}

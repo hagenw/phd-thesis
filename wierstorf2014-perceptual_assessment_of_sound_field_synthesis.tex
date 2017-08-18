@@ -10,7 +10,7 @@
 %                                                                             |
 %                                                                             |
 %                                                                             |
-%                Contact: hagen.wierstorf@gmail.com                           |
+%                Contact: hagen.wierstorf@posteo.de                           |
 %                                                                             |
 %                      License: CC BY 3.0 DE                                  |
 %                                                                             |
@@ -25,6 +25,12 @@
 % --- PAGE LAYOUT ------------------------------------------------------------
 \setcounter{secnumdepth}{3}% add numbering to sections                        |
 \setcounter{tocdepth}{1}% include section to the TOC                          |
+% Fix for titlesec version 2.10.1:                                            |
+%\usepackage{etoolbox}%                                                       |
+%\makeatletter%                                                               |
+%\patchcmd{\ttlh@hang}{\parindent\z@}{\parindent\z@\leavevmode}{}{}%          |
+%\patchcmd{\ttlh@hang}{\noindent}{}{}{}%                                      |
+%\makeatother%                                                                |
 % ----------------------------------------------------------------------------
 
 % --- COLORS -----------------------------------------------------------------
@@ -78,6 +84,15 @@
 \newcommand{\vcentering}[1]{%   vertical centering of parts of a figure       |
     \raisebox{-0.5\height}{#1}% usage: \vcentering{\includegraphics{}}        |
 }%                                                                            |
+\graphicspath{% look for figures in chapter paths                             |
+{01_introduction}%                                                            |
+{02_theory_of_sound_field_synthesis}%                                         |
+{03_sound_field_errors_and_their_perceptual_relevance}%                       |
+{04_binaural_synthesis}%                                                      |
+{05_psychoacoustics}%                                                         |
+{06_modeling}%                                                                |
+}%                                                                            |
+\DeclareGraphicsExtensions{.pdf,.jpg}% avoid including png thumbnails         |
 % ----------------------------------------------------------------------------
 
 % --- CODE -------------------------------------------------------------------

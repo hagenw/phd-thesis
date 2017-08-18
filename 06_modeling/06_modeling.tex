@@ -1,17 +1,7 @@
 % --- Configuration ------------------------------------------------------
 % add shortcut for github url of this chapter
 \def \GITHUB {\GITHUBBASE/06_modeling}
-% add the fig folders
-\graphicspath{%
-{\PATH/\CHAPSIX/fig6_01/}%
-{\PATH/\CHAPSIX/fig6_02/}%
-{\PATH/\CHAPSIX/fig6_03/}%
-{\PATH/\CHAPSIX/fig6_04/}%
-{\PATH/\CHAPSIX/fig6_05/}%
-{\PATH/\CHAPSIX/fig6_06/}%
-{\PATH/\CHAPSIX/fig6_07/}%
-{\PATH/\CHAPSIX/fig6_08/}%
-}
+
 
 % --- Document -----------------------------------------------------------
 \chapter{Prediction of Spatial Fidelity}
@@ -116,9 +106,8 @@ In the next section the modified model will be introduced.
 \label{sec:applied_binaural_model}
 %
 \begin{figure}
-    \small
     \centering
-    \input{fig6_01/dietz2011}
+    \hspace*{-1.2cm}\includegraphics{fig6_01/fig6_01}
     \caption{Sketch of the applied binaural model.
     At the bottom the two time signals $l(t)$ and $r(t)$ are the input to the
     model. After that identical monaural preprocessing is applied. The binaural
@@ -256,8 +245,7 @@ Figure\,\ref{fig:model_localization_distribution} and
 \ref{fig:localization_distribution}.
 %
 \begin{figure}
-    \small
-    \input{fig6_02/localization_distribution}
+    \includegraphics{fig6_02/fig6_02}
     \caption{Distributions of the auditory event's directions as predicted
     by the binaural model for the listening position $(-0.75,-0.75,0)$\,m and the
     circular secondary source distribution with 14 sources.
@@ -270,9 +258,8 @@ Figure\,\ref{fig:model_localization_distribution} and
 
 \renewcommand{\thefigure}{\thechapter.\arabic{figure}a} % add a to figure number
 \begin{figure}
-    \small
     \centering
-    \input{fig6_03/sfs_localization_model_a}
+    \hspace*{-1.2cm}\includegraphics{fig6_03/fig6_03a}
     \caption{Average localization results for all four experiments. The black
     symbols indicate loudspeakers, the grey ones the synthesized source. On
     every listening position an arrow is pointing into the direction the
@@ -290,9 +277,8 @@ Figure\,\ref{fig:model_localization_distribution} and
 \renewcommand{\thefigure}{\thechapter.\arabic{figure}b} % add b to figure number
 \begin{figure}
     \ContinuedFloat % needs the subfig package
-    \small
     \centering
-    \input{fig6_03/sfs_localization_model_b}
+    \hspace*{-1.2cm}\includegraphics{fig6_03/fig6_03b}
     \caption{Average localization results for all four experiments. The black
     symbols indicate loudspeakers, the grey ones the synthesized source. On
     every listening position an arrow is pointing into the direction the
@@ -354,9 +340,8 @@ around $200$\,Hz are marked as blue points, \acp{ITD} for frequencies around
 $500$\,Hz as green, $800$\,Hz as yellow, and $1200$\,Hz as red.
 %
 \begin{figure}
-    \small
     \centering
-    \input{fig6_04/itd_frequency_channels}
+    \includegraphics{fig6_04/fig6_04}
     \caption{\ac{ITD} values over time for different frequencies as indicated by the
     color. The \ac{ITD} was calculated by the binaural model for a single noise
     burst synthesized as a focused source or point source with
@@ -430,9 +415,8 @@ the experiment in Section\,\ref{sec:localization}. However, this time the audien
 was sampled with a higher resolution of around $15$\,cm.
 %
 \begin{figure*}
-    \small
     \centering
-    \input{fig6_05/wfs_linear_model}
+    \includegraphics{fig6_05/fig6_05}
     \caption{Model predictions of the perceived directions for a synthesized point
     source in the audience area. The three different linear secondary source
     distributions were all driven by \ac{WFS}~\protect\eqref{eq:d_wfs_ps_25D}.
@@ -458,9 +442,8 @@ secondary source geometries on the localization results.
 Figure\,\ref{fig:wfs_model} summarizes the result for two different geometries.
 %
 \begin{figure}
-    \small
     \centering
-    \input{fig6_06/wfs_model}
+    \includegraphics{fig6_06/fig6_06}
     \caption{Model predictions of the perceived direction for a synthesized
     sources in the audience area. Both secondary source
     distributions were driven by \ac{WFS} with~\protect\eqref{eq:d_wfs_pw_25D} for the
@@ -508,8 +491,7 @@ chosen.
 %
 \begin{figure*}
     \centering
-    \small
-    \input{fig6_07/nfchoa_model}
+    \includegraphics{fig6_07/fig6_07}
     \caption{Model predictions of the perceived direction for a synthesized
     point source in the audience area. All three secondary source distributions
     were driven by \ac{NFC-HOA}~\protect\eqref{eq:D_nfchoa_ps_25D} with an order of
@@ -592,9 +574,8 @@ It further demonstrates that a \ac{WFS} system and a
 impression.
 %
 \begin{figure}
-    \small
     \centering
-    \input{fig6_08/sweet_spot}
+    \includegraphics{fig6_08/fig6_08}
     \caption{Model prediction of the sweet-spot sizes for different \ac{SFS}
     setups synthesizing a point source. As a comparison a stereophony setup
     presents the same source.

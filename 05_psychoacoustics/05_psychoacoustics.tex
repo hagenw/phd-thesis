@@ -1,26 +1,6 @@
 % --- Configuration ------------------------------------------------------
 % add shortcut for github url of this chapter
 \def \GITHUB {\GITHUBBASE/05_psychoacoustics}
-% add the fig folders
-\graphicspath{%
-{\PATH/\CHAPFIVE/fig5_01/}%
-{\PATH/\CHAPFIVE/fig5_02/}%
-{\PATH/\CHAPFIVE/fig5_03/}%
-{\PATH/\CHAPFIVE/fig5_04/}%
-{\PATH/\CHAPFIVE/fig5_05/}%
-{\PATH/\CHAPFIVE/fig5_06/}%
-{\PATH/\CHAPFIVE/fig5_07/}%
-{\PATH/\CHAPFIVE/fig5_08/}%
-{\PATH/\CHAPFIVE/fig5_09/}%
-{\PATH/\CHAPFIVE/fig5_10/}%
-{\PATH/\CHAPFIVE/fig5_11/}%
-{\PATH/\CHAPFIVE/fig5_12/}%
-{\PATH/\CHAPFIVE/fig5_13/}%
-{\PATH/\CHAPFIVE/fig5_14/}%
-{\PATH/\CHAPFIVE/fig5_15/}%
-{\PATH/\CHAPFIVE/fig5_16/}%
-{\PATH/\CHAPFIVE/fig5_17/}%
-}
 
 
 % --- Document -----------------------------------------------------------
@@ -161,8 +141,7 @@ randomized.
 \label{sec:experiment1_wfs_linear_array}
 %
 \begin{marginfigure}
-    \ft
-    \input{fig5_01/wfs_linear_array}
+    \includegraphics{fig5_01/fig5_01}
     \caption{Setup for Experiment 1. The position of the synthesized
     source is indicated by the grey point. The position of the listener by black
     crosses and secondary sources by black dots.
@@ -220,8 +199,7 @@ for the average listener.
 \label{sec:experiment2_wfs_circular_array}
 %
 \begin{marginfigure}
-    \ft
-    \input{fig5_02/wfs_circular_array}
+    \includegraphics{fig5_02/fig5_02}
     \caption{Setup for Experiment 2. The position of the synthesized
     source is indicated by the grey point. The position of the listener by black
     crosses and secondary sources by black dots.
@@ -268,8 +246,7 @@ One of them had prior experiences with psychoacoustic testing and \ac{WFS}.
 \label{sec:experiment3_nfchoa_circular_array}
 %
 \begin{marginfigure}
-    \ft
-    \input{fig5_03/hoa_circular_array}
+    \includegraphics{fig5_03/fig5_03}
     \caption{Setup for Experiment 3. The position of the synthesized
     source is indicated by the grey point. The position of the listener by black
     crosses and secondary sources by black dots.
@@ -342,9 +319,8 @@ synthesis.
 \label{sec:localization_results}
 %
 \begin{figure}
-    \small
     \centering
-    \input{fig5_04/sfs_localization}
+    \hspace*{-1.2cm}\includegraphics{fig5_04/fig5_04}
     \caption{Average localization results for all four experiments. The black
     symbols indicate loudspeakers, the grey ones the synthesized source. At
     every listening position, an arrow is pointing into the direction from which the
@@ -417,9 +393,8 @@ and only one auditory event is perceived at all
 positions.
 
 \begin{figure}
-    \small
     \centering
-    \input{fig5_05/sfs_localization_distributions}
+    \includegraphics{fig5_05/fig5_05}
     \caption{Distributions of the directions of the auditory event as rated by
     the listeners at the position $(-1,-0.75,0)$\,m for the loudspeaker array with
     14 loudspeakers. The results for a synthesized point source for \ac{WFS} and
@@ -708,9 +683,8 @@ coloration was perceived as being stronger but independent of the different
 loudspeaker spacings.
 %
 \begin{figure}[t]
-    \small
     \centering
-    \input{fig5_06/wittek}
+    \includegraphics{fig5_06/fig5_06}
     \caption{Average results with confidence intervals for the following question:
     Is there a timbral difference between the reference and the stimulus?
     Whereby the reference and the other stimuli were presented by the same
@@ -801,9 +775,8 @@ The stimuli were looped during the experiment and the listener could
 switch instantaneously between the conditions as often as she liked.
 %
 \begin{marginfigure}
-    \ft
     \centering
-    \input{fig5_07/wfs_coloration_setup}
+    \includegraphics{fig5_07/fig5_07}
     \caption{Experimental setup for coloration experiment.
         \reproduce{\GITHUB/fig5_07}
     }
@@ -846,9 +819,8 @@ upper frequency limit of the pre-\-equali\-zat\-ion filter to create an amplitud
 spectrum that is as flat as possible.
 %
 \begin{figure*}
-    \small
     \centering
-    \input{fig5_08/freq_response_coloration}
+    \includegraphics{fig5_08/fig5_08}
     \caption{Amplitude spectra for the varying secondary source distribution
     conditions. The spectra was simulated for the place of the left ear of
     the listener. The left graph shows the spectra
@@ -862,6 +834,7 @@ spectrum that is as flat as possible.
         \reproduce{\GITHUB/fig5_08}
     }
     \label{fig:coloration_freq_response}
+    \vspace{-0.5cm}
 \end{figure*}
 %
 As the aliasing frequency is dependent on the listener position, the optimization
@@ -891,9 +864,8 @@ frequencies and the number of dips are more than four times as large. On the
 other hand, the dips are no longer as deep as at the central position.
 
 \begin{figure}
-    \small
     \centering
-    \input{fig5_09/freq_response_coloration_moving}
+    \includegraphics{fig5_09/fig5_09}
     \caption{Amplitude spectra for \ac{WFS} and a fixed secondary source
     distribution. The spectra are simulated for different positions as
     indicated by the colored labels in the figure.
@@ -933,9 +905,8 @@ noise at two conditions, as indicated by an independent-samples Mann-Whitney U t
 %stimuli were rated as more different.
 %
 \begin{figure*}[t]
-    \small
     \centering
-    \input{fig5_10/wfs_coloration}
+    \includegraphics{fig5_10/fig5_10}
     \caption{Average results with confidence intervals for the perceived
     coloration. Dark colors show results for the central listening position,
     lighter colors for the off-center position.
@@ -979,9 +950,8 @@ of $17$\,cm between the sources. Figure\,\ref{fig:wfs_coloration_pos} summarizes
 the results.
 %
 \begin{figure}
-    \small
     \centering
-    \input{fig5_11/wfs_coloration_pos}
+    \hspace*{0.6cm}\includegraphics{fig5_11/fig5_11}
     \caption{Perceived coloration rated with the attribute pair \emph{very
     different}, \emph{no difference}. The latter corresponds to a value of $0$ in
     the figure, the former to a value of $10$. The values are written directly at
@@ -991,6 +961,7 @@ the results.
         \reproduce{\GITHUB/fig5_11}
     }
     \label{fig:wfs_coloration_pos}
+    \vspace{-0.5cm}
 \end{figure}
 %
 The condition with the listener at the center was the hidden reference and was
@@ -1074,7 +1045,7 @@ The position $(-0.25,-0.5,0)$\,m had the loudest signal and was reported as
 being less externalized compared to all other conditions by two test
 participants after the experiment.
 
-\newthought{The music and pink noise} stimuli show no significant differences in all but two
+\newthought{The music and pink noise} stimuli show no significant differ- ences in all but two
 positions. This indicates that even the usage of music alone might
 be suitable to investigate the perceived coloration. That is of advantage,
 because most listeners considered the noise stimulus as unpleasant, as revealed by
@@ -1147,9 +1118,8 @@ signals. The two speech signals can be downloaded and listened to via headphones
 by clicking on the two \emph{listen} links.
 
 \begin{figure*}[t]
-    \small
     \centering
-    \input{fig5_12/wfs_artifacts}
+    \includegraphics{fig5_12/fig5_12}
     \caption{Impulse response and amplitude spectrum of a point source
     synthesized by \ac{WFS}~\protect\eqref{eq:d_wfs_ps_25D}. Beside the impulse
     response its time reversed version is shown. Both impulse responses were
@@ -1200,8 +1170,7 @@ sources. It was synthesized with \twohalfD \ac{WFS} by applying the driving
 function~\ref{eq:d_wfs_fs_25D}.
 %
 \begin{marginfigure}
-    \ft
-    \input{fig5_13/fs_exp1_setup}
+    \includegraphics{fig5_13/fig5_13}
     \caption{Setup for Experiment 1. The position of the synthesized focused
     source is indicated by the grey point. The position of the listener by black
     crosses and secondary sources by black dots.
@@ -1356,8 +1325,7 @@ speech, respectively.
 
 \begin{figure*}[t]
     \centering
-    \small
-    \input{fig5_14/pca}
+    \includegraphics{fig5_14/fig5_14}
     \caption{Principal component analysis for castanets (left) and
     speech (right) for one single subject.
     The blue, red and black points indicate the position of the conditions given in the
@@ -1423,8 +1391,7 @@ loudspeakers close to the listener.
 
 \begin{figure}
     \centering
-    \small
-    \input{fig5_15/fs_directions}
+    \includegraphics{fig5_15/fig5_15}
     \caption{Direction, amplitude and time of appearance of wave fronts for the
     $4$\,m loudspeaker array (left) and the $10$\,m array (right). The results
     are shown for different angles $\phi$ at a radius of $1$\,m and $4$\,m,
@@ -1441,6 +1408,7 @@ loudspeakers close to the listener.
         \reproduce{\GITHUB/fig5_15}
     }
     \label{fig:fs_direction}
+    \vspace{-0.7cm}
 \end{figure}
 
 The results show a dependency of the perceived direction on the listener
@@ -1520,8 +1488,7 @@ array lengths used in the first experiment.
 \paragraph{Stimuli}
 %
 \begin{marginfigure}[-8cm]
-    \ft
-    \input{fig5_16/fs_exp2_setup}
+    \includegraphics{fig5_16/fig5_16}
     \caption{Setup for Experiment 2. The position of the synthesized focused
     source is indicated by the grey point. The position of the listener by black
     crosses and secondary sources by black dots.
@@ -1571,9 +1538,8 @@ For the listening angle of $0\degree$, the attribute pair
 %----%----%----%----%----%----%----%----%----%----%----%----%----%----%----%----
 \paragraph{Results}
 \begin{figure}
-    \small
     \centering
-    \input{fig5_17/fs_ratings}
+    \includegraphics{fig5_17/fig5_17}
     \caption{Mean and standard error for the
         rating of the attribute pair \emph{few artifacts} vs. \emph{many
         artifacts} plotted over the condition.

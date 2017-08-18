@@ -1,26 +1,6 @@
 % --- Configuration ------------------------------------------------------
 % add shortcut for github url of this chapter
 \def \GITHUB {\GITHUBBASE/03_sound_field_errors_and_their_perceptual_relevance}
-% add the fig folders
-\graphicspath{%
-{\PATH/\CHAPTHREE/fig3_01/}%
-{\PATH/\CHAPTHREE/fig3_02/}%
-{\PATH/\CHAPTHREE/fig3_03/}%
-{\PATH/\CHAPTHREE/fig3_04/}%
-{\PATH/\CHAPTHREE/fig3_05/}%
-{\PATH/\CHAPTHREE/fig3_06/}%
-{\PATH/\CHAPTHREE/fig3_07/}%
-{\PATH/\CHAPTHREE/fig3_08/}%
-{\PATH/\CHAPTHREE/fig3_09/}%
-{\PATH/\CHAPTHREE/fig3_10/}%
-{\PATH/\CHAPTHREE/fig3_11/}%
-{\PATH/\CHAPTHREE/fig3_12/}%
-{\PATH/\CHAPTHREE/fig3_13/}%
-{\PATH/\CHAPTHREE/fig3_14/}%
-{\PATH/\CHAPTHREE/fig3_15/}%
-{\PATH/\CHAPTHREE/fig3_16/}%
-{\PATH/\CHAPTHREE/fig3_17/}%
-}
 
 
 % --- Document -----------------------------------------------------------
@@ -48,8 +28,7 @@ experiments will be carried out, as further described in Chapter\,\ref{cha:psych
 %
 \begin{figure}
     \centering
-    \small
-    \input{fig3_01/amplitudes}
+    \includegraphics{fig3_01/fig3_01}
     \caption{Amplitudes of sources synthesized via
     \ac{WFS} minus the amplitudes of corresponding real sources
     dependent on the listener's position along
@@ -63,6 +42,7 @@ experiments will be carried out, as further described in Chapter\,\ref{cha:psych
     Parameters: $f=1$\,kHz.
     \reproduce{\GITHUB/fig3_01}}
     \label{fig:amplitudes}
+    \vspace{-0.5cm}
 \end{figure}
 %
 \noindent The possible amplitude decays which can be synthesized depend directly on the
@@ -85,8 +65,7 @@ position of the secondary sources.
 %
 \begin{figure}
     \centering
-    \small
-    \input{fig3_02/amplitudes_moving_source}
+    \includegraphics{fig3_02/fig3_02}
     \caption{Amplitudes of a synthesized point/focused source minus the
     amplitudes of corresponding real point source located at $y_\text{s}$
     for three fixed listening positions.
@@ -100,6 +79,7 @@ position of the secondary sources.
     $f=1$\,kHz.
     \reproduce{\GITHUB/fig3_02}}
     \label{fig:amplitudes_moving_source}
+    \vspace{-0.7cm}
 \end{figure}
 %
 \firstthought{In the current} considerations,
@@ -201,8 +181,7 @@ As a consequence, distance perception is not considered in this thesis.
 \label{sec:diffraction_and_truncation_of_secondary_source_distributions}
 %
 \begin{figure*}
-    \small
-    \input{fig3_03/sound_field_truncation}
+    \includegraphics{fig3_03/fig3_03}
     \caption{Sound pressure in decibel of a plane wave synthesized with
     \twohalfD \ac{WFS}~\protect\eqref{eq:D_wfs_pw_25D}.
     The result of an infinite linear secondary source distribution is
@@ -266,9 +245,8 @@ wave is attenuated by $10$\,dB and thereby is $30$\,dB below the desired wave
 front.
 %
 \begin{figure}
-    \small
     \centering
-    \input{fig3_04/sound_field_simulations_imp_tapering}
+    \includegraphics{fig3_04/fig3_04}
     \caption{Sound pressure of three cosine shaped broad-band pulses
     synthesized as plane waves with \ac{WFS}~\protect\eqref{eq:d_wfs_pw_25D}.
     Additional edge waves are visible due to diffraction.
@@ -315,9 +293,8 @@ distribution is then
 given as\autocite[][(13)]{Wierstorf2013a}
 %
 \begin{marginfigure}
-    \ft
     \centering
-    \input{fig3_05/diffraction_pattern}
+    \includegraphics{fig3_05/fig3_05}
     \caption{Size of the focus point $\Delta_\text{s}$ as given by Fraunhofer
     diffraction.
     \reproduce{\GITHUB/fig3_05}}
@@ -335,8 +312,7 @@ truncated secondary source distribution, and $\lambda = \nicefrac{c}{f}$ the wav
 length.
 %
 \begin{figure*}[t]
-    \small
-    \input{fig3_06/focal_point}
+    \includegraphics{fig3_06/fig3_06}
     \caption{Sound pressure of a focused source synthesized with
     \twohalfD \ac{WFS}~\protect\eqref{eq:D_wfs_fs_25D}.
     Three different linear secondary source distributions were
@@ -436,8 +412,7 @@ Chapter.\,\ref{cha:psychoacoustics}.
 
 %
 \begin{figure}
-    \small
-    \input{fig3_07/sampling}
+    \includegraphics{fig3_07/fig3_07}
     \caption{Magnitude of a continuous signal $P$ and the same signal
     sampled with a sampling frequency of $f_\text{s}$. The light blue lines
     indicate components occurring due to the sampling process. $F_\text{r}$
@@ -525,8 +500,7 @@ position.
 
 %
 \begin{figure*}[t]
-    \small
-    \input{fig3_08/sound_field_aliasing}
+    \includegraphics{fig3_08/fig3_08}
     \caption{Sound pressure of a plane wave synthesized by
     \ac{NFC-HOA}~\protect\eqref{eq:D_nfchoa_pw_25D} and
     \ac{WFS}~\protect\eqref{eq:D_wfs_pw_25D} for different frequencies.
@@ -566,8 +540,7 @@ considerations are necessary.
 
 %
 \begin{figure*}[b]
-    \small
-    \input{fig3_09/sound_field_aliasing_fs}
+    \includegraphics{fig3_09/fig3_09}
     \caption[][-0.9cm]{Sound pressure of a focused source
     synthesized by
     \ac{WFS}~\protect\eqref{eq:D_wfs_fs_25D} for different frequencies. Parameters:
@@ -618,8 +591,7 @@ given as
 where $N_\text{s}$ is the number of secondary sources.
 
 \begin{figure}
-    \small
-    \input{fig3_10/sampling_bandlimited}
+    \includegraphics{fig3_10/fig3_10}
     \caption{Magnitude of a mono-frequent, spatial band-limited \ac{NFC-HOA}
     driving function.
     The light blue lines
@@ -630,8 +602,7 @@ where $N_\text{s}$ is the number of secondary sources.
 \end{figure}
 %
 \begin{figure*}[b]
-    \small
-    \input{fig3_11/sound_field_nfchoa_aliasing}
+    \includegraphics{fig3_11/fig3_11}
     \caption[][-0.9cm]{Sound pressure of a plane wave synthesized by
     \ac{NFC-HOA}~\protect\eqref{eq:D_nfchoa_pw_25D} for different frequencies.
     The maximum order $M$ was set
@@ -681,8 +652,7 @@ deviations are visible for \ac{WFS}. That is not surprising as \ac{WFS} is a
 high-frequency approximation of \ac{NFC-HOA}.
 %
 \begin{figure*}[t]
-    \small
-    \input{fig3_12/freq_response}
+    \includegraphics{fig3_12/fig3_12}
     \caption[][-3.5cm]{Sound pressure in decibel of a plane wave synthesized by
     \ac{NFC-HOA}~\protect\eqref{eq:D_nfchoa_pw_25D} and
     \ac{WFS}~\protect\eqref{eq:D_wfs_pw_25D}. Mono-frequent simulations were
@@ -727,8 +697,8 @@ a fixed listener position.
 on the properties of the spatial aliasing artifacts.
 %
 \begin{figure*}[tb]
-    \small
-    \input{fig3_13/sound_field_time}
+    \vspace{-0.5cm}
+    \includegraphics{fig3_13/fig3_13}
     \caption[][-3cm]{Sound pressure of a cosine shaped impulse synthesized as a
     plane wave by \ac{NFC-HOA}~\protect\eqref{eq:D_nfchoa_pw_25D} and
     \ac{WFS}~\protect\eqref{eq:d_wfs_pw_25D}. Parameters:
@@ -770,8 +740,8 @@ correctly in the center of the distribution, but again has additional signal
 components outside of the center.
 
 \begin{figure*}[tb]
-    \small
-    \input{fig3_14/sound_field_time_fixed}
+    \vspace{-0.5cm}
+    \includegraphics{fig3_14/fig3_14}
     \caption[][-3cm]{Sound pressure of cosine shaped impulse synthesized as a
     plane wave by \ac{NFC-HOA}~\protect\eqref{eq:D_nfchoa_pw_25D} and
     \ac{WFS}~\protect\eqref{eq:d_wfs_pw_25D} at three different listening
@@ -826,8 +796,8 @@ At the frontal and side position, small errors are visible mainly after the
 desired wave front.
 
 \begin{figure*}[tb]
-    \small
-    \input{fig3_15/sound_field_time_fixed_filtered}
+    \vspace{-0.5cm}
+    \includegraphics{fig3_15/fig3_15}
     \caption[][-3cm]{Sound pressure of a low and high-frequency cosine shaped
     impulse synthesized as plane wave by
     \ac{NFC-HOA}~\protect\eqref{eq:D_nfchoa_pw_25D} and
@@ -873,8 +843,7 @@ time reversal approach\autocite{Yon2003} that is applied to produce the field
 of a focused source and cannot be overcome -- compare~\eqref{eq:d_wfs_fs_25D}.
 %
 \begin{figure}[t]
-    \small
-    \input{fig3_16/sound_field_time_fixed_fs}
+    \includegraphics{fig3_16/fig3_16}
     \caption{Sound pressure of a cosine shaped impulse synthesized as focused
     source by \ac{WFS}~\protect\eqref{eq:d_wfs_fs_25D} at three listening
     positions. A fixed offset was added to the sound pressure at two listening
@@ -883,6 +852,7 @@ of a focused source and cannot be overcome -- compare~\eqref{eq:d_wfs_fs_25D}.
     secondary source distribution with a diameter of $3$\,m.
     \reproduce{\GITHUB/fig3_16}}
     \label{fig:sound_field_imp_fixed_fs}
+    \vspace{-0.7cm}
 \end{figure}
 
 \newthought{So far} this section has summarized the errors in the sound field due
@@ -906,8 +876,8 @@ with dedicated experiments in Chapter\,\ref{cha:psychoacoustics}.
 
 %
 \begin{figure}[tb]
-    \small
-    \input{fig3_17/sfs_itd}
+    \vspace{-0.5cm}
+    \includegraphics{fig3_17/fig3_17}
     \caption{\acp{ITD} for a pink noise signal synthesized as a point source by
     \ac{NFC-HOA}~\protect\eqref{eq:D_nfchoa_pw_25D} and
     \ac{WFS}~\protect\eqref{eq:d_wfs_pw_25D} at three listening

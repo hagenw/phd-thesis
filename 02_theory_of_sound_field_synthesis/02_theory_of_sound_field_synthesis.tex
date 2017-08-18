@@ -1,21 +1,6 @@
 % --- Configuration ------------------------------------------------------
 % add shortcut for github url of this chapter
 \def \GITHUB {\GITHUBBASE/02_theory_of_sound_field_synthesis}
-% add the fig folders
-\graphicspath{%
-{\PATH/\CHAPTWO/fig2_01/}%
-{\PATH/\CHAPTWO/fig2_02/}%
-{\PATH/\CHAPTWO/fig2_03/}%
-{\PATH/\CHAPTWO/fig2_04/}%
-{\PATH/\CHAPTWO/fig2_05/}%
-{\PATH/\CHAPTWO/fig2_06/}%
-{\PATH/\CHAPTWO/fig2_07/}%
-{\PATH/\CHAPTWO/fig2_08/}%
-{\PATH/\CHAPTWO/fig2_09/}%
-{\PATH/\CHAPTWO/fig2_10/}%
-{\PATH/\CHAPTWO/fig2_11/}%
-{\PATH/\CHAPTWO/fig2_12/}%
-}
 
 
 % --- Document -----------------------------------------------------------
@@ -23,9 +8,8 @@
 \label{cha:sfs}
 
 \begin{figure}
-    \small
     \centering
-    \input{fig2_01/kirchhoff_helmholtz_intergal}
+    \includegraphics{fig2_01/fig2_01}
     \caption{Illustration of the geometry used to discuss the physical
         fundamentals of sound field synthesis and the single-layer
         potential~\protect\eqref{eq:single_layer_potential}.
@@ -396,9 +380,8 @@ distributions.\sidenote[][0.1cm]{\cite[E.g.][]{Spors2008}}
 
 
 \begin{figure}
-    \small
     \centering
-    \input{fig2_02/concave_array}
+    \includegraphics{fig2_02/fig2_02}
     \caption[][0.2cm]{Sound pressure of a point source synthesized with
     \ac{WFS}~\protect\eqref{eq:D_wfs_ps_25D}. The secondary source
         distribution is shown in black, whereby inactive sources are marked with a
@@ -456,13 +439,7 @@ classical secondary sources setups would be a sphere or a plane.
 %
 \begin{figure}
     \centering
-    \small
-    \begin{tikzpicture}
-        \draw (0,0)       node {\includegraphics[width=.8\columnwidth]{sound_field_dimensionality}};
-        \draw (-0.75,1.2) node {\twohalfD};
-        \draw (-3.75,1.2) node {\threeD};
-        \draw (2.05,1.2)  node {\twoD};
-    \end{tikzpicture}
+    \includegraphics{fig2_03/fig2_03}
     \caption{Sound pressure in decibel for secondary source distributions with different
     dimensionality all driven by the same signals. The sound pressure is color
     coded, lighter color corresponds to lower pressure.
@@ -600,8 +577,7 @@ in his definitions of the Green's functions and field expansions.]{Williams1999}
 %
 \begin{marginfigure}
     \centering
-    \ft
-    \input{fig2_04/sound_field_plane_wave}
+    \includegraphics{fig2_04/fig2_04}
     \caption{Sound pressure for a monochromatic plane
         wave~\eqref{eq:plane_wave_omega} going into the
         direction $(1,1,0)$. Parameters: $f = 800$\,Hz.
@@ -667,8 +643,7 @@ the plane wave.
 %
 \begin{marginfigure}
     \centering
-    \ft
-    \input{fig2_05/sound_field_point_source}
+    \includegraphics{fig2_05/fig2_05}
     \caption{Sound pressure for a monochromatic point
         source~\eqref{eq:point_source_omega} placed at $(0,0,0)$. Parameters: $f =
         800$\,Hz.
@@ -739,8 +714,7 @@ function as\sidenote[][-0.5cm]{\cite[][(8.47)]{Williams1999}}
 %
 \begin{marginfigure}
     \centering
-    \ft
-    \input{fig2_06/sound_field_line_source}
+    \includegraphics{fig2_06/fig2_06}
     \caption{Sound pressure for a monochromatic line
         source~\eqref{eq:line_source_omega} placed at $(0,0,0)$. Parameters: $f =
         800$\,Hz.
@@ -832,8 +806,7 @@ into~\eqref{eq:D_spherical} and yield\autocite[][(96)]{Schultz2014}
 %
 \begin{marginfigure}
     \centering
-    \ft
-    \input{fig2_07/sound_field_nfchoa_pw}
+    \includegraphics{fig2_07/fig2_07}
     \caption{Sound pressure of a monochromatic plane wave synthesized with
         \twohalfD \ac{NFC-HOA}~\eqref{eq:D_nfchoa_pw_25D}. Parameters: $\n_k = (0,-1,0)$,
         $\xref = (0,0,0)$, $f = 1$\,kHz.
@@ -923,8 +896,7 @@ function~\eqref{eq:G_spherical} are inserted into~\eqref{eq:D_spherical} and yie
 %
 \begin{marginfigure}
     \centering
-    \ft
-    \input{fig2_08/sound_field_nfchoa_ps}
+    \includegraphics{fig2_08/fig2_08}
     \caption{Sound pressure for a monochromatic point source synthesized by
         \twohalfD \ac{NFC-HOA}~\eqref{eq:D_nfchoa_ps_25D}. Parameters: $\xs =
         (0,2.5,0)$\,m, $\xref = (0,0,0)$, $f = 1$\,kHz.
@@ -1058,8 +1030,7 @@ into~\eqref{eq:D_wfs} and~\eqref{eq:D25D_wfs} it follows
 %
 \begin{marginfigure}[-0.5cm]
     \centering
-    \ft
-    \input{fig2_09/sound_field_wfs_pw}
+    \includegraphics{fig2_09/fig2_09}
     \caption{Sound pressure for a monochromatic plane wave synthesized by
         \twohalfD \ac{WFS}~\eqref{eq:D_wfs_pw_25D}. Parameters: $\n_k = (0,-1,0)$, $\xref
         = (0,0,0)$, $f = 1$\,kHz.
@@ -1113,8 +1084,7 @@ into~\eqref{eq:D_wfs} and~\eqref{eq:D25D_wfs} it follows
 %
 \begin{marginfigure}
     \centering
-    \ft
-    \input{fig2_10/sound_field_wfs_ps}
+    \includegraphics{fig2_10/fig2_10}
     \caption{Sound pressure for a monochromatic point source synthesized by
         \twohalfD \ac{WFS}~\eqref{eq:D_wfs_ps_25D}. Parameters: $\xs = (0,2.5,0)$\,m,
         $\xref = (0,0,0)$, $f = 1$\,kHz.
@@ -1224,8 +1194,7 @@ the Hankel function\autocite[][(9.1.30)]{Abramowitz1972} it follows
 %
 \begin{marginfigure}
     \centering
-    \ft
-    \input{fig2_11/sound_field_wfs_ls}
+    \includegraphics{fig2_11/fig2_11}
     \caption{Sound pressure for a monochromatic line source synthesized by
         \twohalfD \ac{WFS}~\eqref{eq:D_wfs_ls_25D}. Parameters: $\xs = (0,2.5,0)$\,m,
         $\xref = (0,0,0)$, $f = 1$\,kHz.
@@ -1277,8 +1246,7 @@ calculated after Spors et al. as\autocite{Spors2008}
 %
 \begin{marginfigure}
     \centering
-    \ft
-    \input{fig2_12/sound_field_wfs_fs}
+    \includegraphics{fig2_12/fig2_12}
     \caption{Sound pressure of a mono-frequent focused source synthesized with
         \twohalfD \ac{WFS}~\eqref{eq:D_wfs_fs_25D}. Parameters: $\xs = (0,0.5,0)$\,m,
         $\n_\text{s} = (0,-1,0)$, $\xref = (0,0,0)$, $f = 1$\,kHz.
