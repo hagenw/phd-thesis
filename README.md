@@ -21,12 +21,13 @@ corresponding directory is indicating those cases.
 
 ### Sound Field Synthesis Toolbox
 
-From the [Sound Field Synthesis Toolbox](https://github.com/sfstoolbox/sfs) git
-repository you need to checkout the version *commit 3730bc0*, which is identical
-with release 1.0.0. Under Linux this can be done the following way:
+From the [Sound Field Synthesis
+Toolbox](https://github.com/sfstoolbox/sfs-matlab) git repository you need to
+checkout the version *commit 3730bc0*, which is identical with release 1.0.0.
+Under Linux this can be done the following way:
 ```
-$ git clone https://github.com/sfstoolbox/sfs.git
-$ cd sfs
+$ git clone https://github.com/sfstoolbox/sfs-matlab.git
+$ cd sfs-matlab
 $ git checkout 3730bc0
 $ cd ..
 ```
@@ -59,10 +60,10 @@ $ cd ..
 
 After installing both toolboxes you have to start them first in Matlab/Octave in
 oder to run the scripts provided with this PhD thesis.
-This can be done by running the following commands from the `sfs/` and
+This can be done by running the following commands from the `sfs-matlab/` and
 `amtoolbox/` directory, respectively.
 ```Matlab
->> cd sfs
+>> cd sfs-matlab
 >> SFS_start;
 >> cd ../ltfat
 >> ltfatstart;
