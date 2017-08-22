@@ -71,16 +71,23 @@ This can be done by running the following commands from the `sfs-matlab/` and
 >> amtstart;
 ```
 
+### Get additional data
+
+If you don't want to rerun all the numerical simulation, but just want to rerun
+some of the plotting routines, you can download all the results of the numerical
+simulation that is not directly included into this repository from
+http://doi.org/10.5281/zenodo.846561
+
 Now everything is prepared and you can start to reproduce any figure in the
 thesis.
 
 The scripts presented here were tested with Matlab 8.1.0.604 (R2013a), Octave
-3.8.2, gnuplot 4.6 patchlevel 6.
+4.0.0, gnuplot 5.0 patchlevel 3.
 
 
 ## License
 
-Copyright 2015 Hagen Wierstorf
+Copyright 2015-2017 Hagen Wierstorf
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
