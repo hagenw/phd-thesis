@@ -112,15 +112,17 @@ M \le
 
 The impulse responses representing the different WFS systems in the coloration
 experiment were all created using integer delays. This added a few distortions
-for high frequencies, which are observable in Fig. 5.8 as the slight ripples in
-the spectra for the conditions with an inter-loudspeaker distance of 0.5 cm and
-0.3 cm. We repeated the experiment by using a fractional delay method and a
-sampling rate of 48 kHz which ensured that the delay line had a flat frequency
-response in the region up to 44.1 kHz. Now the frequency response for the WFS
-system with an inter-loudspeaker distance of 1 cm showed a flat frequency
-response. The same holds for the results of the listening test presented in Fig.
-5.10. In the repeated listening test, the conditions for 1 cm and 2 cm are no
-longer different from the reference condition. The new results are available at:
+for high frequencies, which are observable in
+[Fig. 5.8](05_psychoacoustics/fig5_08) as the slight ripples in the spectra for
+the conditions with an inter-loudspeaker distance of 0.5 cm and 0.3 cm. We
+repeated the experiment by using a fractional delay method and a sampling rate
+of 48 kHz which ensured that the delay line had a flat frequency response in the
+region up to 44.1 kHz. Now the frequency response for the WFS system with an
+inter-loudspeaker distance of 1 cm showed a flat frequency response. The same
+holds for the results of the listening test presented in
+[Fig. 5.10](05_psychoacoustics/fig5_10). In the repeated listening test, the
+conditions for 1 cm and 2 cm are no longer different from the reference
+condition. The new results are available at:
 https://doi.org/10.5281/zenodo.164592
 
 
