@@ -18,6 +18,34 @@ indicated in the README in the corresponding figure directories.
 
 ## Errata and Updates
 
+### Updates of Figures
+
+With [release 2.4] of the Sound Field Synthesis Toolbox for Matlab many
+numerical issues of the time-domain NFC-HOA have been solved.
+
+The following table provides links to all figures, for which essential updates
+are available. On the figure pages itself you will see thumbnails of the
+original version as well as of the corrected one.
+
+| Updated Figure | Description                                                |
+|:---------------|:-----------------------------------------------------------|
+| [Fig. 3.13]    | Improved numerical stability for NFC-HOA                   |
+| [Fig. 3.14]    | Improved numerical stability for NFC-HOA                   |
+| [Fig. 3.15]    | Improved numerical stability for NFC-HOA                   |
+| [Fig. 3.17]    | Improved numerical stability for NFC-HOA                   |
+| [Fig. 5.8]     | Corrected frequency response by fractional delay filter    |
+| [Fig. 5.9]     | Corrected frequency response by fractional delay filter    |
+| [Fig. 5.10]    | Coloration listening test with corrected stimuli           |
+
+[release 2.4]: http://dx.doi.org/10.5281/zenodo.846583
+[Fig. 3.13]: 03_sound_field_errors_and_their_perceptual_relevance/fig3_13
+[Fig. 3.14]: 03_sound_field_errors_and_their_perceptual_relevance/fig3_14
+[Fig. 3.15]: 03_sound_field_errors_and_their_perceptual_relevance/fig3_15
+[Fig. 3.17]: 03_sound_field_errors_and_their_perceptual_relevance/fig3_17
+[Fig. 5.8]: 05_psychoacoustics/fig5_08
+[Fig. 5.9]: 05_psychoacoustics/fig5_09
+[Fig. 5.10]: 05_psychoacoustics/fig5_10
+
 ### 2. Theory of Sound Field Synthesis
 
 Chapter 2 was transferred to an online version at **http://sfstoolbox.org/**
