@@ -87,7 +87,7 @@ The scripts presented here were tested with Matlab 8.1.0.604 (R2013a), Octave
 
 ## License
 
-Copyright 2015-2017 Hagen Wierstorf
+Copyright 2015-2018 Hagen Wierstorf
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
