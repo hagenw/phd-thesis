@@ -8,6 +8,17 @@ presented in blue, the high-frequency impulses in red. Parameters: x_s =
 (0,−1,0), x_ref = (0,0,0) m, circular secondary source distribution with a
 diameter of 3 m.
 
+## Errata
+
+With [release 2.4.0] of the SFS Toolbox for Matlab the numerical problems
+apparent in the above figure could be resolved ([code to reproduce this
+figure]). 
+
+![Fig 3.15](fig3_15_errata.png)
+
+[release 2.4.0]: http://dx.doi.org/10.5281/zenodo.846583
+[code to reproduce this figure]: https://github.com/hagenw/phd-thesis/tree/sfs-2.4/03_sound_field_errors_and_their_perceptual_relevance/fig3_15
+
 ## Steps for reproduction
 
 Matlab/Octave:
