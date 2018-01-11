@@ -1,21 +1,20 @@
-Perceptual Assessment of Sound Field Synthesis
-==============================================
+# Perceptual Assessment of Sound Field Synthesis #
 
-This repository provides you the following PhD thesis, together with
-[Errata](http://nbviewer.jupyter.org/github/hagenw/phd-thesis/blob/master/ERRATA.ipynb)
-and all the software you need to reproduce all figures presented in the
-thesis.
+This repository provides the following PhD thesis, together with
+[errata](#errata-and-updates) and the [software](#software-requirements) you
+need to reproduce the thesis.
 
-[Hagen Wierstorf - Perceptual Assessment of Sound Field
-Synthesis](http://dx.doi.org/10.14279/depositonce-4310)
-
-[![Titlepage](img/thesis_titlepage.png)](http://dx.doi.org/10.14279/depositonce-4310)
+**Hagen Wierstorf - Perceptual Assessment of Sound Field
+Synthesis, PhD thesis, TU Berlin, 2014,
+[(doi)](http://dx.doi.org/10.14279/depositonce-4310),
+[(pdf)](https://hagenw.github.io/pubs/wierstorf-2014-perceptual_assessment_of_sound_field_synthesis.pdf).**
 
 The software is spread in different directories named after the chapter and
 figure numbers. In order to run the code you will need the external toolboxes
 mentioned below and Matlab or Octave. Some of the code runs only in Octave at
-the moment, but it should be easily adoptable to Matlab. A README in the
-corresponding directory is indicating those cases.
+the moment, but it should be easily adoptable to Matlab. Those cases are
+indicated in the README in the corresponding figure directories.
+
 
 ## Software Requirements
 
@@ -31,7 +30,6 @@ $ cd sfs-matlab
 $ git checkout 3730bc0
 $ cd ..
 ```
-
 
 ### Auditory Modelling Toolbox
 
