@@ -121,7 +121,7 @@ system with an inter-loudspeaker distance of 1 cm showed a flat frequency
 response. The same holds for the results of the listening test presented in Fig.
 5.10. In the repeated listening test, the conditions for 1 cm and 2 cm are no
 longer different from the reference condition. The new results are available at:
-http://docs.twoears.eu/en/1.2/database/experiments/#coloration-of-a-point-source-in-wave-field-synthesis-revisited.
+https://doi.org/10.5281/zenodo.164592
 
 
 ## Software Requirements
