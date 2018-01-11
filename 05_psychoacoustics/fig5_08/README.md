@@ -9,6 +9,16 @@ magnitude in order to meaningfully display them. Parameters: x_s = (0,2.5,0),
 x_ref = (0,0,0) m, circular secondary source distribution with a diameter of
 3 m.
 
+## Errata
+
+By setting the sampling rate to 48000 Hz and using a fractional delay filter the
+frequency responses look more flat and show no artifacts for the three smallest
+loudspeaker spacings ([code to reproduce this figure]). 
+
+![Fig 5.8](fig5_08_errata.png)
+
+[code to reproduce this figure]: https://github.com/hagenw/phd-thesis/tree/sfs-2.4/05_psychoacoustics/fig5_08
+
 ## Steps for reproduction
 
 Bash:
