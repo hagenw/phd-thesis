@@ -16,6 +16,114 @@ the moment, but it should be easily adoptable to Matlab. Those cases are
 indicated in the README in the corresponding figure directories.
 
 
+## Errata and Updates
+
+### 2. Theory of Sound Field Synthesis
+
+Chapter 2 was transferred to an online version at **http://sfstoolbox.org/**
+and is further developed and corrected there. This errata mentions only
+important changes and corrections to the content as presented in the thesis.
+
+#### 2.1 Solution for Special Geometries: Near-Field Compensated Higher Order Ambisonics and Spectral Division Method
+
+The expansion in the basis functions was sloppy formulated as (2.2), (2.3),
+(2.4) are only correct for compact spaces and their summation is infinite and
+does not stop at a particular `N`. Changed accordingly they should read
+
+![`
+G(\mathbf{x}-\mathbf{x}_0,\omega) =
+  \sum_n \tilde{G}_n(\omega)\Psi^*_n(\mathfb{x}_0)\Psi_n(\mathbf{x})
+`](img/errata_eq2.2_part1.png "Eq. (2.2a)")
+
+![`
+D(\mathbf{x}_0,\omega) = \sum_n \tilde{D}_n(\omega)\Psi_n(\mathbf{x}_0)
+`](img/errata_eq2.3_part1.png "Eq. (2.3a)")
+
+![`
+S(\mathbf{x},\omega) = \sum_n \tilde{S}_n(\omega)\Psi_n(\mathbf{x})
+`](img/errata_eq2.4_part1.png "Eq. (2.4a)")
+
+and accompanied for non-compact spaces with these equations
+
+![
+`G(\mathbf{x}-\mathbf{x}_0,\omega) =
+  \int \tilde{G}(\mu,\omega)\Psi^*(\mu,\mathbf{x}_0)\Psi_n(\mu,\mathbf{x}) d\mu
+`](img/errata_eq2.2_part2.png "Eq. (2.2b)")
+
+![`
+D(\mathbf{x}_0,\omega) = \int \tilde{D}(\mu,\omega)\Psi(\mu,\mathbf{x}_0) d\mu
+`](img/errata_eq2.3_part2.png "Eq. (2.3b)")
+
+![`
+S(\mathbf{x},\omega) = \int \tilde{S}(\mu,\omega)\Psi(\mu,\mathbf{x}) d\mu
+`](img/errata_eq2.4_part2.png "Eq. (2.4b)")
+
+where `μ` is the measure in the underlying space.
+
+For a discussion see: https://github.com/sfstoolbox/sfs-documentation/issues/9
+
+#### 2.5 Driving functions
+
+A lot of the driving functions presented for WFS in 2.5.2 are now updated after
+the discussion presented in [Schultz, F., Sound Field Synthesis for Line Source
+Array Applications in Large-Scale Sound Reinforcement, doctoral thesis,
+Universität Rostock, Rostock, Germany,
+2016](http://rosdok.uni-rostock.de/resolve/urn/urn:nbn:de:gbv:28-diss2016-0078-1),
+see http://sfstoolbox.org/en/latest/#driving-functions-for-wfs. The remaining
+discussion in this section focusses only on corrections of the driving functions
+as presented in the thesis.
+
+The WFS driving functions for a focused source (2.71) and (2.72) have the wrong
+direction in time. The equations should read
+
+![`
+D(\mathbf{x}_0,\omega) = \frac{1}{2\pi} A(\omega) w(\mathbf{x}_0)
+  \left(i\frac{\omega}{c} + \frac{1}{|\mathbf{x}_0-\mathbf{x}_\text{s}|} \right)
+  \frac{(\mathbf{x}_0-\mathbf{x}_\text{s})\mathbf{n}_{\mathbf{x}_0}}
+       {|\mathbf{x}_0-\mathbf{x}_\text{s}|^2}
+  e^{i\frac{\omega}{c} |\mathbf{x}_0-\mathbf{x}_\text{s}|}
+`](img/errata_eq2.71.png "Eq. (2.71)")
+
+![`
+D_\text{2.5D}(\mathbf{x}_0,\omega) = \frac{g_0}{2\pi} A(\omega) w(\mathbf{x}_0)
+  \sqrt{i\frac{\omega}{c}} \left(1 + \frac{c}{i\omega}
+  \frac{1}{|\mathbf{x}_0-\mathbf{x}_\text{s}|} \right)
+  \frac{(\mathbf{x}_0-\mathbf{x}_\text{s}) \mathbf{n}_{\mathbf{x}_0}}
+       {|\mathbf{x}_0-\mathbf{x}_\text{s}|^2}
+  e^{i\frac{\omega}{c} |\mathbf{x}_0-\mathbf{x}_\text{s}|}
+`](img/errata_eq2.72.png "Eq. (2.72)")
+
+### 3. Sound Field Errors and their Perceptual Relevance
+
+#### 3.3 Spatial Aliasing and Discrete Secondary Source Distributions
+
+Equation (3.5) for the selection of the maximum order of band-limited NFC-HOA
+has to be slightly changed to
+
+![`
+M \le
+\begin{cases}
+  \frac{N_\text{s}}{2} - 1 & \text{for even } N_\text{s} \\
+  \frac{(N_\text{s}-1)}{2} & \text{for odd } N_\text{s}
+\end{cases}
+`](img/errata_eq3.5.png "Eq. (3.5)")
+
+### 5. Psychoacoustics of Sound Field Synthesis
+
+The impulse responses representing the different WFS systems in the coloration
+experiment were all created using integer delays. This added a few distortions
+for high frequencies, which are observable in Fig. 5.8 as the slight ripples in
+the spectra for the conditions with an inter-loudspeaker distance of 0.5 cm and
+0.3 cm. We repeated the experiment by using a fractional delay method and a
+sampling rate of 48 kHz which ensured that the delay line had a flat frequency
+response in the region up to 44.1 kHz. Now the frequency response for the WFS
+system with an inter-loudspeaker distance of 1 cm showed a flat frequency
+response. The same holds for the results of the listening test presented in Fig.
+5.10. In the repeated listening test, the conditions for 1 cm and 2 cm are no
+longer different from the reference condition. The new results are available at:
+http://docs.twoears.eu/en/1.2/database/experiments/#coloration-of-a-point-source-in-wave-field-synthesis-revisited.
+
+
 ## Software Requirements
 
 ### Sound Field Synthesis Toolbox
