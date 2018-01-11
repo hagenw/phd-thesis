@@ -5,6 +5,17 @@ NFC-HOA (2.45) and WFS (2.57) at three listening positions, with a head
 orientation of 90°. Parameters: x_s = (0,2.5,0), x_ref = (0,0,0), circular
 secondary source distribution with a diameter of 3 m.
 
+## Errata
+
+With [release 2.4.0] of the SFS Toolbox for Matlab the numerical problems
+apparent in the above figure could be resolved ([code to reproduce this
+figure]). 
+
+![Fig 3.17](fig3_17_errata.png)
+
+[release 2.4.0]: http://dx.doi.org/10.5281/zenodo.846583
+[code to reproduce this figure]: https://github.com/hagenw/phd-thesis/tree/sfs-2.4/03_sound_field_errors_and_their_perceptual_relevance/fig3_17
+
 ## Steps for reproduction
 
 Matlab/Octave:
