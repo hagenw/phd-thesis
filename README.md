@@ -154,11 +154,15 @@ listening test are available at: https://doi.org/10.5281/zenodo.164592
 
 ## Software Requirements
 
-### Sound Field Synthesis Toolbox
+If you want to reproduce the corrected and most up-to-date version of the
+figures, please have a look at the [requirements of the sfs-2.4 branch] instead.
 
-From the [Sound Field Synthesis
-Toolbox](https://github.com/sfstoolbox/sfs-matlab) git repository you need to
-checkout the version *commit 3730bc0*, which is identical with release 1.0.0.
+[requirements of the sfs-2.4 branch]: https://github.com/hagenw/phd-thesis/tree/sfs-2.4#software-requirements
+
+### Sound Field Synthesis Toolbox for Matlab
+
+From the [Sound Field Synthesis Toolbox for Matlab] git repository you need to
+checkout commit 3730bc0, which is identical with the release 1.0.0.
 Under Linux this can be done the following way:
 ```
 $ git clone https://github.com/sfstoolbox/sfs-matlab.git
@@ -167,11 +171,12 @@ $ git checkout 3730bc0
 $ cd ..
 ```
 
+[Sound Field Synthesis Toolbox for Matlab]: https://github.com/sfstoolbox/sfs-matlab
+
 ### Auditory Modelling Toolbox
 
-From the [Auditory Modelling Toolbox](http://amtoolbox.sourceforge.net/) git
-repository you need to checkout the version *commit aed0198*. Under Linux this
-can be done the following way:
+From my copy of the [Auditory Modelling Toolbox] git repository you need to
+checkout commit aed0198. Under Linux this can be done the following way:
 ```
 $ git clone https://github.com/hagenw/amtoolbox.git
 $ cd amtoolbox
@@ -179,16 +184,18 @@ $ git checkout aed0198
 $ cd ..
 ```
 
-The [Auditory Modelling Toolbox](http://amtoolbox.sourceforge.net/) depends
-further on the [Large Time-Frequency Analysis
-Toolbox](https://github.com/hagenw/ltfat.git), which you can get in the same
-way:
+The [Auditory Modelling Toolbox] depends
+further on the [Large Time-Frequency Analysis Toolbox], which you can get in
+the same way:
 ```
 $ git clone https://github.com/hagenw/ltfat.git
 $ cd ltfat
 $ git checkout 3f9af4a
 $ cd ..
 ```
+
+[Auditory Modelling Toolbox]: http://amtoolbox.sourceforge.net/
+[Large Time-Frequency Analysis Toolbox]: http://ltfat.github.io
 
 ### Setting up Toolboxes in Matlab
 
@@ -209,7 +216,7 @@ This can be done by running the following commands from the `sfs-matlab/` and
 
 If you don't want to rerun all the numerical simulation, but just want to rerun
 some of the plotting routines, you can download all the results of the numerical
-simulation that is not directly included into this repository from
+simulations that is not directly included into this repository from
 http://doi.org/10.5281/zenodo.846561
 
 Now everything is prepared and you can start to reproduce any figure in the
