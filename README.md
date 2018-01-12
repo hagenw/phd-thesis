@@ -54,7 +54,7 @@ important changes and corrections to the content as presented in the thesis.
 
 #### 2.1 Solution for Special Geometries: Near-Field Compensated Higher Order Ambisonics and Spectral Division Method
 
-The expansion in the basis functions was sloppy formulated as (2.2), (2.3),
+The expansion in basis functions was sloppy formulated as (2.2), (2.3),
 (2.4) are only correct for compact spaces and their summation is infinite and
 does not stop at a particular `N`. Changed accordingly they should read
 
@@ -71,7 +71,7 @@ D(\mathbf{x}_0,\omega) = \sum_n \tilde{D}_n(\omega)\Psi_n(\mathbf{x}_0)
 S(\mathbf{x},\omega) = \sum_n \tilde{S}_n(\omega)\Psi_n(\mathbf{x})
 `](img/errata_eq2.4_part1.png "Eq. (2.4a)")
 
-and accompanied for non-compact spaces with these equations
+and are accompanied for non-compact spaces with these equations
 
 ![
 `G(\mathbf{x}-\mathbf{x}_0,\omega) =
@@ -92,14 +92,14 @@ For a discussion see: https://github.com/sfstoolbox/sfs-documentation/issues/9
 
 #### 2.5 Driving functions
 
-A lot of the driving functions presented for WFS in 2.5.2 are now updated after
-the discussion presented in [Schultz, F., Sound Field Synthesis for Line Source
-Array Applications in Large-Scale Sound Reinforcement, doctoral thesis,
-Universität Rostock, Rostock, Germany,
-2016](http://rosdok.uni-rostock.de/resolve/urn/urn:nbn:de:gbv:28-diss2016-0078-1),
-see http://sfstoolbox.org/en/latest/#driving-functions-for-wfs. The remaining
+Several of the driving functions for WFS presented in 2.5.2 are now updated
+after the discussion presented in [Schultz (2016)], see the [WFS driving
+function chapter on http://sfstoolbox.org] for more details. The remaining
 discussion in this section focusses only on corrections of the driving functions
 as presented in the thesis.
+
+[Schultz (2016)]:http://rosdok.uni-rostock.de/resolve/urn/urn:nbn:de:gbv:28-diss2016-0078-1
+[WFS driving function chapter on http://sfstoolbox.org]: http://sfstoolbox.org/en/latest/#driving-functions-for-wfs
 
 The WFS driving functions for a focused source (2.71) and (2.72) have the wrong
 direction in time. The equations should read
@@ -140,18 +140,16 @@ M \le
 
 The impulse responses representing the different WFS systems in the coloration
 experiment were all created using integer delays. This added a few distortions
-for high frequencies, which are observable in
-[Fig. 5.8](05_psychoacoustics/fig5_08) as the slight ripples in the spectra for
-the conditions with an inter-loudspeaker distance of 0.5 cm and 0.3 cm. We
-repeated the experiment by using a fractional delay method and a sampling rate
-of 48 kHz which ensured that the delay line had a flat frequency response in the
-region up to 44.1 kHz. Now the frequency response for the WFS system with an
-inter-loudspeaker distance of 1 cm showed a flat frequency response. The same
-holds for the results of the listening test presented in
-[Fig. 5.10](05_psychoacoustics/fig5_10). In the repeated listening test, the
-conditions for 1 cm and 2 cm are no longer different from the reference
-condition. The new results are available at:
-https://doi.org/10.5281/zenodo.164592
+for high frequencies, which are observable in [Fig. 5.8] as the slight ripples
+in the spectra for the conditions with an inter-loudspeaker distance of 0.5 cm
+and 0.3 cm. We repeated the experiment by using a fractional delay method and a
+sampling rate of 48 kHz which ensured that the delay line had a flat frequency
+response in the region up to 44.1 kHz. Now the frequency response for the WFS
+system with an inter-loudspeaker distance of 1 cm showed a flat frequency
+response. The same holds for the results of the listening test presented in
+[Fig. 5.10]. In the repeated listening test, the conditions for 1 cm and 2 cm
+are no longer different from the reference condition. The results of the new
+listening test are available at: https://doi.org/10.5281/zenodo.164592
 
 
 ## Software Requirements
