@@ -48,7 +48,8 @@ original version as well as of the corrected one.
 
 ### 2. Theory of Sound Field Synthesis
 
-Chapter 2 was transferred to an online version at **http://sfstoolbox.org/**
+Chapter 2 was transferred to an online version at
+**https://sfs.readthedocs.io**
 and is further developed and corrected there. This errata mentions only
 important changes and corrections to the content as presented in the thesis.
 
@@ -94,12 +95,12 @@ For a discussion see: https://github.com/sfstoolbox/sfs-documentation/issues/9
 
 Several of the driving functions for WFS presented in 2.5.2 are now updated
 after the discussion presented in [Schultz (2016)], see the [WFS driving
-function chapter on http://sfstoolbox.org] for more details. The remaining
+function chapter on https://sfs.readthedocs.io] for more details. The remaining
 discussion in this section focusses only on corrections of the driving functions
 as presented in the thesis.
 
 [Schultz (2016)]:http://rosdok.uni-rostock.de/resolve/urn/urn:nbn:de:gbv:28-diss2016-0078-1
-[WFS driving function chapter on http://sfstoolbox.org]: http://sfstoolbox.org/en/latest/#driving-functions-for-wfs
+[WFS driving function chapter on https://sfs.readthedocs.io]: https://sfs.readthedocs.io/en/3.2/d_wfs/
 
 The WFS driving functions for a focused source (2.71) and (2.72) have the wrong
 direction in time. The equations should read
